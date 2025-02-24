@@ -1,0 +1,104 @@
+.reviews {
+  background: linear-gradient(135deg, #e1f7ff, #f9f9f9);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.reviews h2 {
+  font-size: 42px;
+  color: #222;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+.reviewCards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reviewCard {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.3s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+}
+
+.reviewCard p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.reviewCard h4 {
+  font-size: 20px;
+  color: #007bff;
+  font-weight: 600;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.reviewCard::before,
+.reviewCard::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.reviewCard::before {
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: 20px;
+  opacity: 0.2;
+}
+
+.reviewCard::after {
+  width: 150px;
+  height: 150px;
+  bottom: -50px;
+  right: -50px;
+  opacity: 0.1;
+}
+
+.reviewCard:hover::before,
+.reviewCard:hover::after {
+  width: 180px;
+  height: 180px;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .reviewCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviewCard {
+    width: 90%;
+    margin: 20px 0;
+  }
+}

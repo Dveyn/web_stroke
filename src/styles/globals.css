@@ -1,0 +1,100 @@
+@import './variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top left, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+  color: var(--color-text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Логотип */
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1000;
+  width: 150px;
+  filter: drop-shadow(0 0 10px var(--color-shadow));
+  -webkit-filter: drop-shadow(0 0 10px var(--color-shadow));
+}
+
+/* Глобальные стили */
+h1, h2, h3 {
+  font-weight: 600;
+  background: linear-gradient(45deg, var(--color-text-light), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+/* Секции */
+.section {
+  padding: 120px 15%;
+  position: relative;
+}
+
+.glass-card {
+  background: var(--color-glass-card-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid var(--color-glass-card-border);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--color-shadow-light);
+}
+
+/* Сетки */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+/* Анимации */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .section {
+      padding: 80px 10%;
+  }
+
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+
+  .logo {
+      width: 120px;
+      top: 1rem;
+      left: 1rem;
+  }
+}

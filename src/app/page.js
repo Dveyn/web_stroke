@@ -1,14 +1,27 @@
-import styles from "./page.module.css";
-import { Advantages, Hero, ReviewCard, Workflow, FAQItem } from "@@/components/layout";
+'use client'
 
-export default function Home() {
+import React, { useEffect } from 'react';
+import Header from '../components/layout/Header';
+import AboutSection from '../components/sections/AboutSection';
+import ServicesSection from '../components/sections/ServicesSection';
+import PortfolioSection from '../components/sections/PortfolioSection';
+import IntroSection from '@@/components/sections/IntroSection';
+import aosInit from '@@/utils/aosInit';
+
+const HomePage = () => {
+  useEffect(()=>{
+    aosInit()
+  },[])
+ 
   return (
-    <div className={ styles.page }>
-      <Hero />
-      <Advantages />
-      <ReviewCard />
-      <Workflow />
-      <FAQItem />
-    </div>
+    <>
+      <Header />
+      <IntroSection />
+      <AboutSection />
+      <ServicesSection />
+      <PortfolioSection />
+    </>
   );
-}
+};
+
+export default HomePage;

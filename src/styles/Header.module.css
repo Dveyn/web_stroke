@@ -1,0 +1,106 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, var(--color-bg-start), var(--color-bg-end));
+  box-shadow: 0 4px 12px var(--color-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 250px;
+}
+
+.nav {
+  display: flex;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navList li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease-in-out;
+}
+
+.navList li a:hover {
+  background: linear-gradient(45deg, var(--color-text-light), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navList li a:hover::after {
+  width: 100%;
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menuToggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-text-light);
+  transition: all 0.3s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .navList {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: linear-gradient(90deg, var(--color-bg-start), var(--color-bg-end));
+    box-shadow: 0 4px 12px var(--color-shadow-light);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .active,
+  .active .navList {
+    display: flex;
+  }
+
+  .navList li {
+    padding: 1rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,13 @@
+:root {
+  --color-bg-start: #0a0a0a;
+  --color-bg-end: #111;
+  --color-primary: #00c1ff; /* Голубой оттенок */
+  --color-primary-light: #00e5ff; /* Светлый голубой оттенок */
+  --color-text: rgba(255, 255, 255, 0.8);
+  --color-text-light: #fff;
+  --color-shadow: rgba(0, 225, 255, 0.5);
+  --color-shadow-light: rgba(0, 195, 255, 0.5); /* Для голубого */
+  --color-glass-card-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-card-border: rgba(255, 255, 255, 0.1);
+  --color-header-gradient: rgba(0, 195, 255, 0.1);
+}

@@ -1,6 +1,7 @@
+'use client'
+
 import React, { useState } from 'react';
 import styles from '@@/styles/Header.module.css';
-import Image from 'next/image';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

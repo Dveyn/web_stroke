@@ -7,6 +7,7 @@ import ServicesSection from '../components/sections/ServicesSection';
 import PortfolioSection from '../components/sections/PortfolioSection';
 import IntroSection from '@@/components/sections/IntroSection';
 import aosInit from '@@/utils/aosInit';
+import ContactSection from '@@/components/sections/ContsctSection';
 
 const HomePage = () => {
   useEffect(()=>{
@@ -15,11 +16,11 @@ const HomePage = () => {
  
   return (
     <>
-      <Header />
       <IntroSection />
       <AboutSection />
       <ServicesSection />
       <PortfolioSection />
+      <ContactSection />
     </>
   );
 };

@@ -3,7 +3,7 @@ import GlassCard from '../common/GlassCard';
 
 const ServicesSection = () => {
   return (
-    <section className="section">
+    <section className="section" id='service'>
       <h2 data-aos="fade-up">Наши услуги</h2>
       <div className="grid-3">
         <GlassCard data-aos="fade-up">

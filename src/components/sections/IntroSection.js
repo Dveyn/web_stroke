@@ -2,7 +2,7 @@ import styles from '../../styles/IntroSection.module.css';
 
 const IntroSection = () => {
     return (
-        <section className={styles.header}>
+        <section className={styles.header} id='home'>
             <div className={styles.headerBackground}></div>
             <div className={styles.headerContent}>
                 <h1 data-aos="fade-up">ВЕБШТРИХ</h1>

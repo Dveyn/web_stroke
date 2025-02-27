@@ -1,5 +1,7 @@
 
+import Header from "@@/components/layout/Header";
 import "../styles/globals.css";
+import Footer from "@@/components/layout/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -9,7 +11,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" href="/img/favicon.png"></link>
       </head>
       <body>
+        <Header />
         { children }
+        <Footer />
       </body>
     </html>
   );

@@ -42,6 +42,9 @@ const Footer = () => {
             <a href="https://tenchat.ru/dveyn?utm_source=4bf75246-93b7-458d-b6e0-7d36c49f8274" target="_blank" rel="noopener noreferrer">
               TenChat
             </a>
+            <a href="https://set.ki/invite/DbAdUj3" target="_blank" rel="noopener noreferrer">
+              Сетка
+            </a>
           </div>
         </div>
       </div>

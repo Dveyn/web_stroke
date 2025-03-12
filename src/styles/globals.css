@@ -126,6 +126,14 @@ button:disabled {
   cursor: not-allowed;
 }
 
+#about p {
+  margin: 20px 0;
+}
+
+#about li {
+  list-style: inside;
+  margin-top: 10px;
+}
 /* Адаптивность */
 @media (max-width: 768px) {
   .section {

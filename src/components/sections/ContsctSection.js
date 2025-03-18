@@ -142,10 +142,15 @@ const ContactSection = () => {
 
         <GlassCard data-aos="fade-up">
           <h3>Наши контакты</h3>
-          <p>Email: info@webstroke.ru</p>
+          <p>Email: <a href="mailto:info@webstroke.ru">info@webstroke.ru</a></p>
+          <p>Телефон: <a href="tel:+78006009833">8-800-600-98-33</a></p>
           <p>Адрес: г. Ростов-на-Дону, ул. Вавилова, д. 49, офис 111</p>
-          <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=140530117890" width="100%" height="400" frameBorder="0"></iframe>
-        </GlassCard>
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=140530117890"
+            width="100%"
+            height="400"
+            frameBorder="0">
+          </iframe>        </GlassCard>
       </div>
     </section>
   );

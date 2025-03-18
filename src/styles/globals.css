@@ -365,4 +365,8 @@ textarea {
     top: 1rem;
     left: 1rem;
   }
+
+  .features-list li {
+    flex-direction: column;
+  }
 }

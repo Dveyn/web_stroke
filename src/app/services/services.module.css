@@ -1,0 +1,232 @@
+.servicePage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.serviceContent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.serviceIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+.serviceIcon {
+  font-size: 40px;
+  color: var(--color-primary);
+}
+
+.serviceDetails {
+  width: 50%;
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.priceBlock {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.serviceCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.serviceCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: left 0.3s ease-in-out;
+}
+
+.serviceCard:hover::before {
+  left: 100%;
+}
+
+.ctaContainer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #007bff, #00ccff);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+  font-size: 18px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease-in-out;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.ctaButton:hover {
+  background: linear-gradient(135deg, #0056b3, #0088cc);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.7);
+  transform: scale(1.05);
+}
+
+.otherServices {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.otherServices h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .serviceContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .serviceDetails {
+    width: 100%;
+  }
+
+  .serviceIconContainer {
+    width: 70px;
+    height: 70px;
+  }
+
+  .serviceIcon {
+    font-size: 35px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .ctaButton {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicePage {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .serviceContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .serviceIconContainer {
+    width: 60px;
+    height: 60px;
+  }
+
+  .serviceIcon {
+    font-size: 30px;
+  }
+
+  .serviceDetails {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .features ul {
+    padding: 0;
+  }
+
+  .priceBlock {
+    font-size: 20px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButton {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    text-align: center;
+  }
+}

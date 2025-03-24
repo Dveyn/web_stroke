@@ -6,7 +6,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 50%, var(--color-header-gradient) 0%, transparent 50%);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   animation: pulseBackground 5s infinite alternate ease-in-out;
 }
 
@@ -19,7 +19,7 @@
   font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(0, 123, 255, 0.5);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(0, 123, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.6);
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -35,7 +35,8 @@
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at 50% 50%, var(--color-header-gradient) 0%, transparent 50%);
-  animation: pulse 10s infinite alternate;
+  background-size: 200% 200%;
+  animation: waveBackground 10s infinite alternate ease-in-out;
 }
 
 .ctaButton {
@@ -55,7 +56,23 @@
 .ctaButton:hover {
   background-color: #0056b3;
   transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.8);
+}
+
+.floatingIcons {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.floatingIcon {
+  font-size: 50px;
+  color: white;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 @keyframes pulse {
@@ -66,4 +83,55 @@
 @keyframes pulseBackground {
   0% { background-size: 100%; }
   100% { background-size: 115%; }
+}
+
+@keyframes waveBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 80px 20px;
+  }
+  .tiltText { font-size: 2.8rem; }
+  .floatingIcons { justify-content: center; }
+  .floatingIcon { font-size: 35px; }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 15px;
+  }
+  .tiltText { font-size: 2.3rem; }
+  .floatingIcons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .floatingIcon { font-size: 30px; }
+  .ctaButton {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 50px 10px; }
+  .tiltText { font-size: 2rem; }
+  .floatingIcons { gap: 5px; }
+  .floatingIcon { font-size: 25px; }
+  .ctaButton {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
 }

@@ -8,6 +8,7 @@ import PortfolioSection from '../components/sections/PortfolioSection';
 import IntroSection from '@@/components/sections/IntroSection';
 import aosInit from '@@/utils/aosInit';
 import ContactSection from '@@/components/sections/ContsctSection';
+import HowWeWork from '@@/components/sections/howWeWork';
 
 const HomePage = () => {
   useEffect(()=>{
@@ -18,6 +19,7 @@ const HomePage = () => {
     <>
       <IntroSection />
       <AboutSection />
+      <HowWeWork />
       <ServicesSection />
       <PortfolioSection />
       <ContactSection />
@@ -26,4 +28,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-

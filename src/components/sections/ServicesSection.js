@@ -2,59 +2,74 @@ import React from 'react';
 import GlassCard from '../common/GlassCard';
 import { FaBuilding, FaShoppingCart, FaLaptopCode, FaSearch, FaBullhorn } from "react-icons/fa";
 
+const services = [
+  {
+    icon: <FaBuilding className="service-icon" />,
+    title: "Корпоративные сайты",
+    link: "/services/corporate-sites",
+    description: "Создание представительских платформ для крупного бизнеса с уникальным дизайном и функционалом.",
+    benefits: ["🔥 Уникальный дизайн", "⚡️ Быстрая загрузка", "🔗 Интеграция с сервисами"],
+    price: "от 50 000 ₽"
+  },
+  {
+    icon: <FaShoppingCart className="service-icon" />,
+    title: "Интернет-магазины",
+    link: "/services/ecommerce",
+    description: "Высоконагруженные решения для e-commerce с интеграцией всех необходимых систем.",
+    benefits: ["🛒 Готовые к продажам", "💳 Онлайн-оплата", "📈 Аналитика продаж"],
+    price: "от 80 000 ₽"
+  },
+  {
+    icon: <FaLaptopCode className="service-icon" />,
+    title: "Веб-приложения",
+    link: "/services/web-apps",
+    description: "Разработка сложных веб-приложений с использованием современных технологий.",
+    benefits: ["🚀 Высокая скорость", "🔒 Безопасность", "🔄 Интеграция API"],
+    price: "от 100 000 ₽"
+  },
+  {
+    icon: <FaSearch className="service-icon" />,
+    title: "SEO анализ и продвижение",
+    link: "/services/seo",
+    description: "Оптимизация сайтов под поисковые системы, увеличение видимости и привлечение целевой аудитории.",
+    benefits: ["📊 Анализ конкурентов", "🔍 SEO-оптимизация", "📢 Контент-маркетинг"],
+    price: "от 30 000 ₽"
+  },
+  {
+    icon: <FaBullhorn className="service-icon" />,
+    title: "Маркетинг и реклама",
+    link: "/services/marketing",
+    description: "Разработка и запуск рекламных кампаний для увеличения трафика и конверсий.",
+    benefits: ["🎯 Таргетированная реклама", "📢 Контент-стратегия", "📈 Аналитика и рост"],
+    price: "от 40 000 ₽"
+  }
+];
+
 const ServicesSection = () => {
   return (
     <section className="section" id='service'>
       <h2 data-aos="fade-up">Наши услуги</h2>
       <div className="grid-3">
-        <GlassCard data-aos="fade-up">
-          <h3><FaBuilding className="service-icon" /> <a href="/services/corporate-sites">Корпоративные сайты</a></h3>
-          <p>Создание представительских платформ для крупного бизнеса с уникальным дизайном и функционалом.</p>
-          <ul className="service-benefits">
-            <li>🔥 Уникальный дизайн</li>
-            <li>⚡️ Быстрая загрузка</li>
-            <li>🔗 Интеграция с сервисами</li>
-          </ul>
-        </GlassCard>
-        <GlassCard data-aos="fade-up" data-aos-delay="100">
-          <h3><FaShoppingCart className="service-icon" /> <a href="/services/ecommerce">Интернет-магазины</a></h3>
-          <p>Высоконагруженные решения для e-commerce с интеграцией всех необходимых систем.</p>
-          <ul className="service-benefits">
-            <li>🛒 Готовые к продажам</li>
-            <li>💳 Онлайн-оплата</li>
-            <li>📈 Аналитика продаж</li>
-          </ul>
-        </GlassCard>
-        <GlassCard data-aos="fade-up" data-aos-delay="200">
-          <h3><FaLaptopCode className="service-icon" /> <a href="/services/web-apps">Веб-приложения</a></h3>
-          <p>Разработка сложных веб-приложений с использованием современных технологий.</p>
-          <ul className="service-benefits">
-            <li>🚀 Высокая скорость</li>
-            <li>🔒 Безопасность</li>
-            <li>🔄 Интеграция API</li>
-          </ul>
-        </GlassCard>
-        <GlassCard data-aos="fade-up" data-aos-delay="300">
-          <h3><FaSearch className="service-icon" /> <a href="/services/seo">SEO анализ и продвижение</a></h3>
-          <p>Оптимизация сайтов под поисковые системы, увеличение видимости и привлечение целевой аудитории.</p>
-          <ul className="service-benefits">
-            <li>📊 Анализ конкурентов</li>
-            <li>🔍 SEO-оптимизация</li>
-            <li>📢 Контент-маркетинг</li>
-          </ul>
-        </GlassCard>
-        <GlassCard data-aos="fade-up" data-aos-delay="400">
-          <h3><FaBullhorn className="service-icon" /> <a href="/services/marketing">Маркетинг и реклама</a></h3>
-          <p>Разработка и запуск рекламных кампаний для увеличения трафика и конверсий.</p>
-          <ul className="service-benefits">
-            <li>🎯 Таргетированная реклама</li>
-            <li>📢 Контент-стратегия</li>
-            <li>📈 Аналитика и рост</li>
-          </ul>
-        </GlassCard>
+        {services.map((service, index) => (
+          <GlassCard key={index} className="glass-card clickable" data-aos="fade-up" data-aos-delay={index * 100} onClick={() => window.location.href = service.link}>
+            <h3>{service.icon} <a href={service.link}>{service.title}</a></h3>
+            <p>{service.description}</p>
+            <ul className="service-benefits">
+              {service.benefits.map((benefit, i) => <li key={i}>{benefit}</li>)}
+            </ul>
+            <p className="service-price">{service.price}</p>
+            <a href={service.link} className="cta-button">Подробнее об услуге</a>
+          </GlassCard>
+        ))}
       </div>
 
       <div className="cta-container">
+        <h2>Почему выбирают нас?</h2>
+        <ul>
+          <li>✅ Работаем официально, договор, гарантия</li>
+          <li>✅ Используем современные технологии</li>
+          <li>✅ Проекты под ключ с аналитикой</li>
+        </ul>
         <a href="/#contact" className="cta-button">Оставить заявку</a>
       </div>
     </section>

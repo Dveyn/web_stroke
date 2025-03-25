@@ -104,3 +104,9 @@
     text-align: center;
   }
 }
+@media (max-width: 460px) {
+  .logo img {
+    width: 100%;
+    max-width: 120px;
+  }
+}

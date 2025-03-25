@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from "framer-motion"; // Импортируем motion
 import { FaSearch, FaDraftingCompass, FaPalette, FaCode, FaBug, FaRocket } from "react-icons/fa";
 import "../../styles/globals.css";
 
@@ -15,26 +15,31 @@ const steps = [
 const HowWeWork = () => {
   return (
     <section id="how-we-work" className="section">
-      <h2 data-aos="fade-up">Как мы работаем</h2>
+      <h2>Как мы работаем</h2>
       <div className="how-we-work-container">
         <div className="timeline"></div>
         <div className="how-we-work-grid">
           {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              className={`how-we-work-card ${index % 2 === 0 ? "left" : "right"}`}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.3 }}
-            >
-              <div className="how-we-work-icon">{step.icon}</div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </motion.div>
+            <StepCard key={index} index={index} step={step} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const StepCard = ({ index, step }) => {
+  return (
+    <motion.div
+      className={`how-we-work-card ${index % 2 === 0 ? "left" : "right"}`}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} // Начальная позиция и непрозрачность
+      whileInView={{ opacity: 1, x: 0 }} // Анимация при попадании в область видимости
+      transition={{ duration: 0.6, delay: index * 0.3 }} // Плавное появление, с задержкой в зависимости от индекса
+    >
+      <div className="how-we-work-icon">{step.icon}</div>
+      <h3>{step.title}</h3>
+      <p>{step.description}</p>
+    </motion.div>
   );
 };
 

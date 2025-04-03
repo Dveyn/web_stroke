@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import GlassCard from '../common/GlassCard';
 import { Tilt } from 'react-tilt';
+import aosInit from '@@/utils/aosInit';
 
 const PortfolioSection = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -44,6 +47,11 @@ const PortfolioSection = () => {
       category: 'Лендинги'
     },
   ];
+
+  useEffect(() => {
+    aosInit();
+  }, []);
+
 
   const filteredProjects = selectedCategory === "Все"
     ? projects

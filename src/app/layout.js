@@ -3,7 +3,6 @@ import Header from "@@/components/layout/Header";
 import "../styles/globals.css";
 import Footer from "@@/components/layout/Footer";
 import YandexMetrika from "@@/utils/YandexMetrika";
-
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">

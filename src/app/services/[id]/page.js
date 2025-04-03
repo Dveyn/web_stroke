@@ -73,6 +73,27 @@ const serviceData = {
 };
 
 
+export async function generateMetadata({ params }) {
+  const { id } = params; // Получаем id из URL
+  const service = serviceData[id];
+
+  // Если кейс не найден, показываем 404
+  if (!service) {
+    notFound();
+  }
+
+  return {
+    title: `Услуга - ${service.title} | ВебШтрих`,
+    description: service.description,
+    openGraph: {
+      title: `Услуга - ${service.title} | ВебШтрих`,
+      description: service.description,
+      images: [service.image], // Можно добавить изображение для Open Graph
+    },
+  };
+}
+
+
 export default function ServiceDetail({ params }) {
   const service = serviceData[params.id];
 

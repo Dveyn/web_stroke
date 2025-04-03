@@ -1,6 +1,10 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect } from 'react';
 import GlassCard from '../common/GlassCard';
 import { FaBuilding, FaShoppingCart, FaLaptopCode, FaSearch, FaBullhorn } from "react-icons/fa";
+import aosInit from '@@/utils/aosInit';
+
 const services = [
   {
     icon: <FaBuilding className="service-icon" />,
@@ -45,6 +49,10 @@ const services = [
 ];
 
 const ServicesSection = () => {
+
+  useEffect(() => {
+    aosInit();
+  }, []);
   return (
     <section className="section" id='service'>
       <h2 data-aos="fade-up">Наши услуги</h2>

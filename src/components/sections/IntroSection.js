@@ -1,7 +1,11 @@
+"use client"
+
 import styles from '../../styles/IntroSection.module.css';
 import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
 import { SiReact, SiNextdotjs, SiTypescript, SiFigma, SiJavascript } from "react-icons/si";
+import aosInit from '@@/utils/aosInit';
+import { useEffect } from 'react';
 
 const IntroSection = () => {
     const floatingIcons = [
@@ -12,6 +16,9 @@ const IntroSection = () => {
       { icon: <SiJavascript />, alt: "JavaScript" },
     ];
 
+    useEffect(() => {
+      aosInit();
+    }, []);
     return (
         <section className={styles.header} id='home'>
             <div className={styles.animatedBackground}></div>

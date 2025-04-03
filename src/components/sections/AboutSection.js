@@ -1,9 +1,14 @@
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
 import GlassCard from '../common/GlassCard';
 import { FiCheckCircle, FiCpu, FiSettings, FiShield, FiTrendingUp } from "react-icons/fi";
 import { motion } from "framer-motion";
+import aosInit from '@@/utils/aosInit';
 
 const AboutSection = () => {
+      useEffect(() => {
+        aosInit();
+      }, []);
   return (
     <section className="section" id='about'>
       <GlassCard data-aos="fade-up">

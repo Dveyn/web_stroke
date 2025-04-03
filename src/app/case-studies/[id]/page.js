@@ -74,6 +74,25 @@ const caseStudyData = {
   },
 };
 
+export async function generateMetadata({ params }) {
+  const { id } = params; // Получаем id из URL
+  const caseStudy = caseStudyData[id];
+
+  // Если кейс не найден, показываем 404
+  if (!caseStudy) {
+    notFound();
+  }
+
+  return {
+    title: `Кейс - ${caseStudy.title} | ВебШтрих`,
+    description: caseStudy.description,
+    openGraph: {
+      title: `Кейс - ${caseStudy.title} | ВебШтрих`,
+      description: caseStudy.description,
+      images: [caseStudy.image], // Можно добавить изображение для Open Graph
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return Object.keys(caseStudyData).map((id) => ({ id }));

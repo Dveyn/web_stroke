@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import GlassCard from '../common/GlassCard';
 import { FaUser, FaEnvelope, FaPhone, FaCommentDots } from "react-icons/fa";
 import { PatternFormat } from 'react-number-format';
 import DOMPurify from 'dompurify';
+import aosInit from '@@/utils/aosInit';
 
 const ContactSection = () => {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +17,10 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    aosInit();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import styles from "../caseStudies.module.css"; // импорт стилей
+import Head from "next/head";
 
 // Статичные данные кейсов
 const caseStudyData = {

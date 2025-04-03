@@ -1,7 +1,6 @@
 import React from 'react';
 import GlassCard from '../common/GlassCard';
 import { FaBuilding, FaShoppingCart, FaLaptopCode, FaSearch, FaBullhorn } from "react-icons/fa";
-
 const services = [
   {
     icon: <FaBuilding className="service-icon" />,

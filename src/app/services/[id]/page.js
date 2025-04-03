@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styles from "../services.module.css";
 import { FaBuilding, FaShoppingCart, FaLaptopCode, FaSearch, FaBullhorn } from "react-icons/fa";
 
@@ -14,7 +15,7 @@ const serviceData = {
     ],
     price: "от 50 000 ₽",
     timeline: "от 2 недель",
-    icon: <FaBuilding className={styles.serviceIcon} />,
+    icon: <FaBuilding className={ styles.serviceIcon } />,
   },
   "ecommerce": {
     title: "Интернет-магазины",
@@ -28,7 +29,7 @@ const serviceData = {
     ],
     price: "от 80 000 ₽",
     timeline: "от 3 недель",
-    icon: <FaShoppingCart className={styles.serviceIcon} />,
+    icon: <FaShoppingCart className={ styles.serviceIcon } />,
   },
   "web-apps": {
     title: "Веб-приложения",
@@ -41,7 +42,7 @@ const serviceData = {
     ],
     price: "от 100 000 ₽",
     timeline: "от 4 недель",
-    icon: <FaLaptopCode className={styles.serviceIcon} />,
+    icon: <FaLaptopCode className={ styles.serviceIcon } />,
   },
   "seo": {
     title: "SEO анализ и продвижение",
@@ -54,7 +55,7 @@ const serviceData = {
     ],
     price: "от 30 000 ₽",
     timeline: "от 1 недели",
-    icon: <FaSearch className={styles.serviceIcon} />,
+    icon: <FaSearch className={ styles.serviceIcon } />,
   },
   "marketing": {
     title: "Маркетинг и реклама",
@@ -67,7 +68,7 @@ const serviceData = {
     ],
     price: "от 40 000 ₽",
     timeline: "от 2 недель",
-    icon: <FaBullhorn className={styles.serviceIcon} />,
+    icon: <FaBullhorn className={ styles.serviceIcon } />,
   },
 };
 
@@ -77,11 +78,11 @@ export default function ServiceDetail({ params }) {
 
   if (!service) {
     return (
-      <div className={styles.errorPage}>
+      <div className={ styles.errorPage }>
         <h1>Услуга не найдена</h1>
         <p>
-          Проверьте правильность ссылки или вернитесь на{" "}
-          <a href="/services" className={styles.link}>
+          Проверьте правильность ссылки или вернитесь на{ " " }
+          <a href="/services" className={ styles.link }>
             страницу услуг
           </a>.
         </p>
@@ -94,58 +95,64 @@ export default function ServiceDetail({ params }) {
     .map(([key, data]) => ({ key, ...data }));
 
   return (
-    <div className={styles.servicePage}>
-      {/* Hero Section */}
-      <section className={styles.header}>
-        <h1>{service.title}</h1>
-        <p>{service.description}</p>
-        <p>Не теряйте возможности! Закажите сайт под ключ у профессионалов, который будет отвечать всем вашим требованиям. Мы предлагаем полный цикл услуг: от разработки до поддержки, чтобы ваш бизнес был всегда на высоте.</p>
-      </section>
+    <>
+    <Head>
+      <title>{service.title}</title>
+      <meta name="description" content={service.description} />
+    </Head>
+      <div className={ styles.servicePage }>
+        {/* Hero Section */ }
+        <section className={ styles.header }>
+          <h1>{ service.title }</h1>
+          <p>{ service.description }</p>
+          <p>Не теряйте возможности! Закажите сайт под ключ у профессионалов, который будет отвечать всем вашим требованиям. Мы предлагаем полный цикл услуг: от разработки до поддержки, чтобы ваш бизнес был всегда на высоте.</p>
+        </section>
 
-      {/* Service Content Section */}
-      <section className={styles.serviceContent}>
-        <div className={styles.serviceIconContainer}>{service.icon}</div>
-        <p className={styles.serviceDetails}>{service.details}</p>
-        <p>Хотите заказать сайт, который не только красиво выглядит, но и привлекает клиентов? Мы создаём сайты, которые способствуют росту вашего бизнеса. Закажите сайт под ключ, и мы обеспечим его успешную работу с первых дней.</p>
-      </section>
+        {/* Service Content Section */ }
+        <section className={ styles.serviceContent }>
+          <div className={ styles.serviceIconContainer }>{ service.icon }</div>
+          <p className={ styles.serviceDetails }>{ service.details }</p>
+          <p>Хотите заказать сайт, который не только красиво выглядит, но и привлекает клиентов? Мы создаём сайты, которые способствуют росту вашего бизнеса. Закажите сайт под ключ, и мы обеспечим его успешную работу с первых дней.</p>
+        </section>
 
-      {/* Price and Timeline Section */}
-      <section className={styles.priceBlock}>
-        <h2>Стоимость и сроки</h2>
-        <p>
-          <span className={styles.price}>Стоимость: {service.price}</span> <br />
-          <span className={styles.timeline}>Сроки: {service.timeline}</span>
-        </p>
-        <p>Мы предлагаем выгодные условия и гарантируем, что ваш сайт будет готов в максимально короткие сроки. Закажите сайт под ключ и получите качественный продукт с полным обслуживанием.</p>
-        <a href="/#contact" className={styles.ctaButton}>
-          Заказать услугу
-        </a>
-      </section>
+        {/* Price and Timeline Section */ }
+        <section className={ styles.priceBlock }>
+          <h2>Стоимость и сроки</h2>
+          <p>
+            <span className={ styles.price }>Стоимость: { service.price }</span> <br />
+            <span className={ styles.timeline }>Сроки: { service.timeline }</span>
+          </p>
+          <p>Мы предлагаем выгодные условия и гарантируем, что ваш сайт будет готов в максимально короткие сроки. Закажите сайт под ключ и получите качественный продукт с полным обслуживанием.</p>
+          <a href="/#contact" className={ styles.ctaButton }>
+            Заказать услугу
+          </a>
+        </section>
 
-      {/* Features Section */}
-      <section className={styles.features}>
-        <h2>Что вы получите:</h2>
-        <p>Преимущества наших решений включают в себя не только высококачественную разработку, но и комплексный подход. Мы работаем с каждым клиентом индивидуально, обеспечиваем полную поддержку и внедрение лучших технологий.</p>
-        <ul>
-          {service.features.map((feature, index) => (
-            <li key={index}>{feature}</li>
-          ))}
-        </ul>
-      </section>
+        {/* Features Section */ }
+        <section className={ styles.features }>
+          <h2>Что вы получите:</h2>
+          <p>Преимущества наших решений включают в себя не только высококачественную разработку, но и комплексный подход. Мы работаем с каждым клиентом индивидуально, обеспечиваем полную поддержку и внедрение лучших технологий.</p>
+          <ul>
+            { service.features.map((feature, index) => (
+              <li key={ index }>{ feature }</li>
+            )) }
+          </ul>
+        </section>
 
-      {/* Other Services Section */}
-      <section className={styles.otherServices}>
-        <h2>Другие услуги</h2>
-        <div className={styles.servicesGrid}>
-          {otherServices.map((s) => (
-            <a key={s.key} href={`/services/${s.key}`} className={styles.serviceCard}>
-              <div className={styles.serviceIconContainer}>{s.icon}</div>
-              <h3>{s.title}</h3>
-              <p className={styles.price}>{s.price}</p>
-            </a>
-          ))}
-        </div>
-      </section>
-    </div>
+        {/* Other Services Section */ }
+        <section className={ styles.otherServices }>
+          <h2>Другие услуги</h2>
+          <div className={ styles.servicesGrid }>
+            { otherServices.map((s) => (
+              <a key={ s.key } href={ `/services/${s.key}` } className={ styles.serviceCard }>
+                <div className={ styles.serviceIconContainer }>{ s.icon }</div>
+                <h3>{ s.title }</h3>
+                <p className={ styles.price }>{ s.price }</p>
+              </a>
+            )) }
+          </div>
+        </section>
+      </div>
+    </>
   );
 }

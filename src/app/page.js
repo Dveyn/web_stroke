@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useEffect } from 'react';
 import Header from '../components/layout/Header';
@@ -9,14 +9,20 @@ import IntroSection from '@@/components/sections/IntroSection';
 import aosInit from '@@/utils/aosInit';
 import ContactSection from '@@/components/sections/ContsctSection';
 import HowWeWork from '@@/components/sections/howWeWork';
+import Head from 'next/head';
 
 const HomePage = () => {
-  useEffect(()=>{
-    aosInit()
-  },[])
- 
+  useEffect(() => {
+    aosInit();
+  }, []);
+
   return (
     <>
+      <Head>
+        <title>ВебШтрих — комплексная разработка сайтов, продвижение и сопровождение</title>
+        <meta name="description" content="Полный цикл услуг: от идеи и дизайна до запуска и поддержки сайта. Мы помогаем малому и среднему бизнесу расти в интернете. Индивидуальный подход к каждому клиенту." />
+        <meta name="keywords" content="веб-студия, разработка сайтов, сопровождение, маркетинг, продвижение сайтов, digital-агентство, IT-услуги, сайт для бизнеса, ВебШтрих" />
+      </Head>
       <IntroSection />
       <AboutSection />
       <HowWeWork />

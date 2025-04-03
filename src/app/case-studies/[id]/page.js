@@ -92,62 +92,68 @@ const CaseStudy = ({ params }) => {
     .map(([key, data]) => ({ key, ...data }));
 
   return (
-    <div className={styles.caseStudyPage}>
-      <div className={styles.caseStudyHeader}>
-        <h1 className={styles.title}>{caseStudy.title}</h1>
-        <p className={styles.description}>{caseStudy.description}</p>
-      </div>
-
-      <div className={styles.caseStudyContent}>
-        <div className={styles.caseIconContainer}>
-          <img src={caseStudy.image} alt={caseStudy.title} className={styles.caseImage} />
+    <>
+      <Head>
+        <title>{ caseStudy.title }</title>
+        <meta name="description" content={ caseStudy.description } />
+      </Head>
+      <div className={ styles.caseStudyPage }>
+        <div className={ styles.caseStudyHeader }>
+          <h1 className={ styles.title }>{ caseStudy.title }</h1>
+          <p className={ styles.description }>{ caseStudy.description }</p>
         </div>
-        <p className={styles.caseDetails}>{caseStudy.details}</p>
-      </div>
 
-      <div className={styles.process}>
-        <h2 className={styles.processTitle}>Процесс работы:</h2>
-        <ul className={styles.processList}>
-          {caseStudy.process.map((step, index) => (
-            <li key={index} className={styles.processItem}>{step}</li>
-          ))}
-        </ul>
-      </div>
+        <div className={ styles.caseStudyContent }>
+          <div className={ styles.caseIconContainer }>
+            <img src={ caseStudy.image } alt={ caseStudy.title } className={ styles.caseImage } />
+          </div>
+          <p className={ styles.caseDetails }>{ caseStudy.details }</p>
+        </div>
 
-      <div className={styles.results}>
-        <h2 className={styles.resultsTitle}>Результаты:</h2>
-        <p>{caseStudy.result}</p>
-      </div>
+        <div className={ styles.process }>
+          <h2 className={ styles.processTitle }>Процесс работы:</h2>
+          <ul className={ styles.processList }>
+            { caseStudy.process.map((step, index) => (
+              <li key={ index } className={ styles.processItem }>{ step }</li>
+            )) }
+          </ul>
+        </div>
 
-      <div className={styles.priceBlock}>
-        <h2>Стоимость:</h2>
-        <p>{caseStudy.price}</p>
-      </div>
+        <div className={ styles.results }>
+          <h2 className={ styles.resultsTitle }>Результаты:</h2>
+          <p>{ caseStudy.result }</p>
+        </div>
 
-      <div className={styles.timelineBlock}>
-        <h2>Сроки выполнения:</h2>
-        <p>{caseStudy.timeline}</p>
-      </div>
+        <div className={ styles.priceBlock }>
+          <h2>Стоимость:</h2>
+          <p>{ caseStudy.price }</p>
+        </div>
 
-      <div className={styles.ctaContainer}>
-        <a href="/#contact" className={styles.ctaButton}>Заказать услугу</a>
-      </div>
+        <div className={ styles.timelineBlock }>
+          <h2>Сроки выполнения:</h2>
+          <p>{ caseStudy.timeline }</p>
+        </div>
 
-      <div className={styles.otherCaseStudies}>
-        <h2>Другие кейсы</h2>
-        <div className={styles.servicesGrid}>
-          {otherCaseStudies.map((caseStudy) => (
-            <a key={caseStudy.key} href={`/case-studies/${caseStudy.key}`} className={styles.caseCard}>
-              <div className={styles.caseIconContainer}>
-                <img src={caseStudy.image} alt={caseStudy.title} className={styles.caseImage} />
-              </div>
-              <h3>{caseStudy.title}</h3>
-              <p>{caseStudy.price}</p>
-            </a>
-          ))}
+        <div className={ styles.ctaContainer }>
+          <a href="/#contact" className={ styles.ctaButton }>Заказать услугу</a>
+        </div>
+
+        <div className={ styles.otherCaseStudies }>
+          <h2>Другие кейсы</h2>
+          <div className={ styles.servicesGrid }>
+            { otherCaseStudies.map((caseStudy) => (
+              <a key={ caseStudy.key } href={ `/case-studies/${caseStudy.key}` } className={ styles.caseCard }>
+                <div className={ styles.caseIconContainer }>
+                  <img src={ caseStudy.image } alt={ caseStudy.title } className={ styles.caseImage } />
+                </div>
+                <h3>{ caseStudy.title }</h3>
+                <p>{ caseStudy.price }</p>
+              </a>
+            )) }
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

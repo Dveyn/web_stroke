@@ -39,6 +39,11 @@ const IntroSection = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   href="/#contact"
+                  onClick={()=> {
+                    try{
+                      ym(97829589,'reachGoal','on_cta')
+                    } catch(error){}
+                  }}
                   className={`${styles.ctaButton} ${styles.ctaAnimation}`}
                   data-aos="fade-up"
                   data-aos-delay="400"

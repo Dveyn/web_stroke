@@ -74,9 +74,15 @@ const ContactSection = () => {
       if (!response.ok) {
         throw new Error('Ошибка при отправке данных');
       }
+      try {
+        ym(97829589,'reachGoal','send_leed');
+      } catch (error) {
+        console.error('Ошибка при отправке Yandex Metrika:', error);
+      }
 
       setIsSuccess(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
+
     } catch (err) {
       setError('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
     } finally {
@@ -91,18 +97,18 @@ const ContactSection = () => {
 
         <GlassCard data-aos="fade-up" className="contact-form">
           <h3>Форма обратной связи</h3>
-          { isSuccess ? (
+          {isSuccess ? (
             <p className="success-message">Спасибо! Ваше сообщение успешно отправлено.</p>
           ) : (
-            <form onSubmit={ handleSubmit }>
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name"><FaUser className="input-icon" /> Имя:</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  value={ formData.name }
-                  onChange={ handleChange }
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -112,8 +118,8 @@ const ContactSection = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={ formData.email }
-                  onChange={ handleChange }
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
               <div className="form-group">
@@ -124,9 +130,9 @@ const ContactSection = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  value={ formData.phone }
-                  onValueChange={ (values) => setFormData({ ...formData, phone: values.value }) }
-                  isNumericString={ true }
+                  value={formData.phone}
+                  onValueChange={(values) => setFormData({ ...formData, phone: values.value })}
+                  isNumericString={true}
                 />
               </div>
               <div className="form-group">
@@ -134,17 +140,17 @@ const ContactSection = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={ formData.message }
-                  onChange={ handleChange }
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                 />
               </div>
-              { error && <p className="error-message">{ error }</p> }
-              <button type="submit" className="submit-button" disabled={ isSubmitting }>
-                { isSubmitting ? 'Отправка...' : 'Отправить' }
+              {error && <p className="error-message">{error}</p>}
+              <button type="submit" className="submit-button" disabled={isSubmitting}>
+                {isSubmitting ? 'Отправка...' : 'Отправить'}
               </button>
             </form>
-          ) }
+          )}
         </GlassCard>
 
         <GlassCard data-aos="fade-up">

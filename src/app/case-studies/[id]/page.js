@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import styles from "../caseStudies.module.css"; // импорт стилей
 import Head from "next/head";
+import { BtnCta } from "@@/components/common/btnCta";
 
 // Статичные данные кейсов
 const caseStudyData = {
@@ -153,10 +154,7 @@ const CaseStudy = ({ params }) => {
           <h2>Сроки выполнения:</h2>
           <p>{ caseStudy.timeline }</p>
         </div>
-
-        <div className={ styles.ctaContainer }>
-          <a href="/#contact" className={ styles.ctaButton }>Заказать услугу</a>
-        </div>
+        <BtnCta />
 
         <div className={ styles.otherCaseStudies }>
           <h2>Другие кейсы</h2>

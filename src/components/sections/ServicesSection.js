@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
 import React, { useEffect } from 'react';
 import GlassCard from '../common/GlassCard';
 import { FaBuilding, FaShoppingCart, FaLaptopCode, FaSearch, FaBullhorn } from "react-icons/fa";
 import aosInit from '@@/utils/aosInit';
+import { BtnCta } from '../common/btnCta';
 
 const services = [
   {
@@ -77,7 +78,7 @@ const ServicesSection = () => {
           <li>Используем современные технологии</li>
           <li>Проекты под ключ с аналитикой</li>
         </ul>
-        <a href="/#contact" className="cta-button">Оставить заявку</a>
+        <BtnCta />
       </div>
     </section>
   );

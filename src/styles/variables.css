@@ -1,13 +1,53 @@
 :root {
+  /* Основные цвета */
   --color-bg-start: #0a0a0a;
   --color-bg-end: #111;
-  --color-primary: #00c1ff; /* Голубой оттенок */
-  --color-primary-light: #00e5ff; /* Светлый голубой оттенок */
-  --color-text: rgba(255, 255, 255, 0.8);
+  --color-primary: #00c1ff;
+  --color-primary-light: #00e5ff;
+  --color-primary-dark: #0099cc;
+  
+  /* Текстовые цвета */
+  --color-text: rgba(255, 255, 255, 0.9);
   --color-text-light: #fff;
-  --color-shadow: rgba(0, 225, 255, 0.5);
-  --color-shadow-light: rgba(0, 195, 255, 0.5); /* Для голубого */
-  --color-glass-card-bg: rgba(255, 255, 255, 0.05);
-  --color-glass-card-border: rgba(255, 255, 255, 0.1);
-  --color-header-gradient: rgba(0, 195, 255, 0.1);
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  
+  /* Эффекты */
+  --color-shadow: rgba(0, 225, 255, 0.3);
+  --color-shadow-light: rgba(0, 195, 255, 0.2);
+  --color-shadow-dark: rgba(0, 0, 0, 0.4);
+  
+  /* Стеклянные элементы */
+  --color-glass-card-bg: rgba(255, 255, 255, 0.08);
+  --color-glass-card-border: rgba(255, 255, 255, 0.12);
+  --color-glass-card-hover: rgba(255, 255, 255, 0.12);
+  
+  /* Градиенты */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  --gradient-dark: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  
+  /* Тени */
+  --shadow-sm: 0 2px 8px var(--color-shadow-dark);
+  --shadow-md: 0 4px 16px var(--color-shadow-dark);
+  --shadow-lg: 0 8px 32px var(--color-shadow-dark);
+  --shadow-glow: 0 0 20px var(--color-shadow);
+  
+  /* Анимации */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Скругления */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Отступы */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
 }

@@ -2,12 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(90deg, var(--color-bg-start), var(--color-bg-end));
-  box-shadow: 0 4px 12px var(--color-shadow);
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--color-glass-card-bg);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--color-glass-card-border);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+  background: var(--color-glass-card-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .logo {
@@ -17,7 +24,12 @@
 
 .logo img {
   width: 100%;
-  max-width: 250px;
+  max-width: 200px;
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover img {
+  transform: scale(1.05);
 }
 
 .nav {
@@ -27,15 +39,25 @@
 .navList {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: var(--spacing-xl);
+  margin: 0;
+  padding: 0;
 }
 
 .navList li a {
   text-decoration: none;
   color: var(--color-text);
   font-weight: 500;
+  font-size: 1.1rem;
   position: relative;
-  transition: color 0.3s ease;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+}
+
+.navList li a:hover {
+  color: var(--color-primary);
+  background: var(--color-glass-card-hover);
 }
 
 .navList li a::after {
@@ -43,38 +65,55 @@
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: var(--color-primary);
-  transition: width 0.3s ease-in-out;
-}
-
-.navList li a:hover {
-  background: linear-gradient(45deg, var(--color-text-light), var(--color-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  bottom: 0;
+  left: 50%;
+  background: var(--gradient-primary);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
 }
 
 .navList li a:hover::after {
-  width: 100%;
+  width: 80%;
 }
 
 .menuToggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 5px;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+}
+
+.menuToggle:hover {
+  background: var(--color-glass-card-hover);
 }
 
 .menuToggle span {
   width: 25px;
-  height: 3px;
-  background-color: var(--color-text-light);
-  transition: all 0.3s ease;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: all var(--transition-normal);
 }
 
-/* Адаптивность */
+.menuToggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuToggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
   .nav {
     display: none;
   }
@@ -87,26 +126,52 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background: linear-gradient(90deg, var(--color-bg-start), var(--color-bg-end));
-    box-shadow: 0 4px 12px var(--color-shadow-light);
+    background: var(--color-glass-card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--color-glass-card-border);
+    border-radius: var(--radius-md);
     flex-direction: column;
-    width: 200px;
+    width: 250px;
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    box-shadow: var(--shadow-lg);
     display: none;
   }
 
-  .active,
-  .active .navList {
+  .nav.active .navList {
     display: flex;
   }
 
   .navList li {
-    padding: 1rem;
+    width: 100%;
+  }
+
+  .navList li a {
+    display: block;
+    padding: var(--spacing-md);
     text-align: center;
   }
+
+  .navList li a::after {
+    display: none;
+  }
 }
-@media (max-width: 460px) {
+
+@media (max-width: 480px) {
+  .header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
   .logo img {
+    max-width: 150px;
+  }
+
+  .navList {
     width: 100%;
-    max-width: 120px;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 }

@@ -24,11 +24,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(99, 102, 241, 0.15) 0%,
-    rgba(23, 23, 23, 0.95) 70%
-  );
+  background: radial-gradient(circle at center,
+      rgba(99, 102, 241, 0.15) 0%,
+      rgba(23, 23, 23, 0.95) 70%);
   animation: pulse 8s ease-in-out infinite;
 }
 
@@ -93,7 +91,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
-  animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) 0.1s both;
+  animation: fadeInUp 1.2s cubic-bezier(.23, 1.01, .32, 1) 0.1s both;
 }
 
 .heroSVG {
@@ -117,7 +115,7 @@
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .title::after {
@@ -165,7 +163,7 @@
   font-size: 1.18rem;
   text-decoration: none;
   border: none;
-  box-shadow: 0 4px 24px 0 rgba(124,58,237,0.10);
+  box-shadow: 0 4px 24px 0 rgba(124, 58, 237, 0.10);
   cursor: pointer;
   transition: background var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
   position: relative;
@@ -191,7 +189,7 @@
   background: var(--primary-light);
   color: #fff;
   transform: translateY(-2px) scale(1.045);
-  box-shadow: 0 8px 32px 0 rgba(124,58,237,0.16);
+  box-shadow: 0 8px 32px 0 rgba(124, 58, 237, 0.16);
 }
 
 .secondaryButton {
@@ -305,13 +303,13 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) 0.3s both;
+  animation: fadeInUp 1.2s cubic-bezier(.23, 1.01, .32, 1) 0.3s both;
 }
 
 .techIcon {
   width: 44px;
   height: 44px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -319,48 +317,74 @@
   font-size: 2rem;
   color: var(--primary);
   box-shadow: none;
-  border: 1.5px solid rgba(124,58,237,0.10);
+  border: 1.5px solid rgba(124, 58, 237, 0.10);
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
   margin-bottom: 0;
 }
 
 .techIcon:hover {
   transform: scale(1.08);
-  background: rgba(124,58,237,0.08);
+  background: rgba(124, 58, 237, 0.08);
   color: var(--primary-dark);
 }
 
 /* Адаптивность */
 @media (max-width: 900px) {
-  .heroGlow { width: 400px; height: 400px; }
-  .heroCard { padding: var(--space-10) var(--space-4); max-width: 98vw; }
+  .heroGlow {
+    width: 400px;
+    height: 400px;
+  }
+
+  .heroCard {
+    padding: var(--space-10) var(--space-4);
+    max-width: 98vw;
+  }
+
   .title {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .heroGlow { width: 220px; height: 220px; }
-  .heroCard { padding: var(--space-6) var(--space-2); gap: var(--space-4); }
+  .heroGlow {
+    width: 220px;
+    height: 220px;
+  }
+
+  .heroCard {
+    width: 90dvw;
+    padding: var(--space-6) var(--space-2);
+    gap: var(--space-4);
+  }
+
   .title {
     font-size: 1.3rem;
     margin-bottom: var(--space-2);
   }
+
   .buttons {
     flex-direction: column;
     gap: var(--space-2);
   }
+
   .techIcons {
     gap: var(--space-2);
     margin-top: var(--space-2);
   }
+
   .techIcon {
     width: 36px;
     height: 36px;
     font-size: 1.3rem;
   }
-  .subtitle { font-size: 1.05rem; }
-  .socialProof { font-size: 0.95rem; }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .socialProof {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -402,6 +426,13 @@
     flex-direction: column;
   }
 
+  .primaryButton {
+    min-height: unset;
+    min-width: unset;
+    width: 70%;
+    position: relative;
+  }
+
   .primaryButton,
   .secondaryButton {
     width: 100%;
@@ -410,9 +441,12 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -422,9 +456,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -435,6 +471,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -442,42 +479,56 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.8;
   }
 }
 
 @keyframes noise {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   10% {
     transform: translate(-5%, -5%);
   }
+
   20% {
     transform: translate(-10%, 5%);
   }
+
   30% {
     transform: translate(5%, -10%);
   }
+
   40% {
     transform: translate(-5%, 15%);
   }
+
   50% {
     transform: translate(-10%, 5%);
   }
+
   60% {
     transform: translate(15%, 0);
   }
+
   70% {
     transform: translate(0, 10%);
   }
+
   80% {
     transform: translate(3%, 15%);
   }
+
   90% {
     transform: translate(-10%, 10%);
   }

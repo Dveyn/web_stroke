@@ -23,7 +23,7 @@ const IntroSection = () => {
       "Бесплатный аудит сайта",
       "Гарантия на работы",
       "Поддержка 24/7",
-      "Опыт 5+ лет"
+      "Современные технологии"
     ];
 
     useEffect(() => {
@@ -58,7 +58,7 @@ const IntroSection = () => {
                 </div>
                 <div className={styles.socialProof}>
                     <FaCheckCircle style={{ marginRight: '8px', color: 'var(--primary)' }} />
-                    100+ успешных проектов для клиентов по всей России
+                    Создаем качественные сайты для развития вашего бизнеса
                 </div>
                 <div className={styles.benefits}>
                     {benefits.map((benefit, index) => (

@@ -1,0 +1,555 @@
+/* Базовые анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Современные анимации для элементов */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+/* Анимация появления с задержкой */
+.stagger-animation > * {
+  opacity: 0;
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Анимация пульсации */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Анимация вращения */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Анимация волны */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
+}
+
+/* Анимация свечения */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Анимация появления с масштабированием */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Анимация появления с поворотом */
+@keyframes rotateIn {
+  from {
+    transform: rotate(-10deg) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-rotate-in {
+  animation: rotateIn 0.5s ease-out forwards;
+}
+
+/* Анимация появления с размытием */
+@keyframes blurIn {
+  from {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.animate-blur-in {
+  animation: blurIn 0.5s ease-out forwards;
+}
+
+/* Анимация появления с градиентом */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Анимация появления с отскоком */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Анимация появления с размытием и масштабированием */
+@keyframes blurScaleIn {
+  0% {
+    filter: blur(10px);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-scale-in {
+  animation: blurScaleIn 0.5s ease-out forwards;
+}
+
+/* Анимация появления с волной */
+@keyframes waveIn {
+  0% {
+    transform: translateY(20px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-wave-in {
+  animation: waveIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Анимация появления с размытием и поворотом */
+@keyframes blurRotateIn {
+  0% {
+    filter: blur(10px);
+    transform: rotate(-10deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-rotate-in {
+  animation: blurRotateIn 0.5s ease-out forwards;
+}
+
+/* Анимация появления с размытием и отскоком */
+@keyframes blurBounceIn {
+  0% {
+    filter: blur(10px);
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  70% {
+    filter: blur(2px);
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-bounce-in {
+  animation: blurBounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Анимация появления с размытием и волной */
+@keyframes blurWaveIn {
+  0% {
+    filter: blur(10px);
+    transform: translateY(20px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-wave-in {
+  animation: blurWaveIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Анимация появления с размытием и градиентом */
+@keyframes blurGradientIn {
+  0% {
+    filter: blur(10px);
+    background-position: 0% 50%;
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+}
+
+.animate-blur-gradient-in {
+  background-size: 200% 200%;
+  animation: blurGradientIn 1s ease-out forwards;
+}
+
+/* Анимация появления с размытием и свечением */
+@keyframes blurGlowIn {
+  0% {
+    filter: blur(10px);
+    box-shadow: 0 0 5px var(--primary);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    box-shadow: 0 0 20px var(--primary);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    box-shadow: 0 0 5px var(--primary);
+    opacity: 1;
+  }
+}
+
+.animate-blur-glow-in {
+  animation: blurGlowIn 1s ease-out forwards;
+}
+
+/* Анимация появления с размытием и пульсацией */
+@keyframes blurPulseIn {
+  0% {
+    filter: blur(10px);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-pulse-in {
+  animation: blurPulseIn 1s ease-out forwards;
+}
+
+/* Анимация появления с размытием и вращением */
+@keyframes blurSpinIn {
+  0% {
+    filter: blur(10px);
+    transform: rotate(-180deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: rotate(-90deg) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-spin-in {
+  animation: blurSpinIn 1s ease-out forwards;
+}
+
+/* Анимация появления с размытием и отскоком */
+@keyframes blurBounceIn {
+  0% {
+    filter: blur(10px);
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  70% {
+    filter: blur(2px);
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-bounce-in {
+  animation: blurBounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Анимация появления с размытием и волной */
+@keyframes blurWaveIn {
+  0% {
+    filter: blur(10px);
+    transform: translateY(20px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-wave-in {
+  animation: blurWaveIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Анимация появления с размытием и градиентом */
+@keyframes blurGradientIn {
+  0% {
+    filter: blur(10px);
+    background-position: 0% 50%;
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+}
+
+.animate-blur-gradient-in {
+  background-size: 200% 200%;
+  animation: blurGradientIn 1s ease-out forwards;
+}
+
+/* Анимация появления с размытием и свечением */
+@keyframes blurGlowIn {
+  0% {
+    filter: blur(10px);
+    box-shadow: 0 0 5px var(--primary);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    box-shadow: 0 0 20px var(--primary);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    box-shadow: 0 0 5px var(--primary);
+    opacity: 1;
+  }
+}
+
+.animate-blur-glow-in {
+  animation: blurGlowIn 1s ease-out forwards;
+}
+
+/* Анимация появления с размытием и пульсацией */
+@keyframes blurPulseIn {
+  0% {
+    filter: blur(10px);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-pulse-in {
+  animation: blurPulseIn 1s ease-out forwards;
+}
+
+/* Анимация появления с размытием и вращением */
+@keyframes blurSpinIn {
+  0% {
+    filter: blur(10px);
+    transform: rotate(-180deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(5px);
+    transform: rotate(-90deg) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    filter: blur(0);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-blur-spin-in {
+  animation: blurSpinIn 1s ease-out forwards;
+}

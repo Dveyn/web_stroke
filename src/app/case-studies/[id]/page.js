@@ -154,7 +154,9 @@ const CaseStudy = ({ params }) => {
           <h2>Сроки выполнения:</h2>
           <p>{ caseStudy.timeline }</p>
         </div>
-        <BtnCta />
+        <div className={ styles.ctaWrapper }>
+          <BtnCta />
+        </div>
 
         <div className={ styles.otherCaseStudies }>
           <h2>Другие кейсы</h2>

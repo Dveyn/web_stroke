@@ -1,172 +1,329 @@
 .caseStudyPage {
-  padding: 60px 40px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Inter', sans-serif;
-  color: var(--color-text);
-  background: #1f1f1f; /* Темный фон страницы */
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+  padding: 40px;
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 .caseStudyHeader {
-  margin-bottom: 50px;
+  background: rgba(30,30,40,0.82);
+  backdrop-filter: blur(18px);
+  border-radius: 2.2em;
+  padding: 48px 40px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.caseStudyHeader::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 0;
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-primary) 100%);
+  opacity: 0.7;
+  filter: blur(0.5px);
+  transition: opacity 0.3s;
+  animation: borderGradientMove 4s linear infinite;
 }
 
 .title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 30px; /* Увеличен отступ */
-  background: linear-gradient(45deg, var(--color-text-light), var(--color-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 1px 0 #222;
+  margin-bottom: 0.5em;
+  position: relative;
+  z-index: 1;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  margin: 0.7em auto 0;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-primary));
+  opacity: 0.8;
 }
 
 .description {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.8;
-  text-align: center;
-  margin-bottom: 35px;
-  color: var(--color-text-light);
+  color: #f3f3f3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  position: relative;
+  z-index: 1;
 }
 
 .caseStudyContent {
-  margin-top: 30px;
-  background: #2b2b2b; /* Темный фон для контента */
-  padding: 35px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  background: rgba(30,30,40,0.82);
+  backdrop-filter: blur(15px);
+  border-radius: 2.2em;
+  padding: 48px 40px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
 }
 
 .caseIconContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  height: 320px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  margin-bottom: 30px;
+  height: 120px;
+  background: rgba(40,40,60,0.85);
+  border-radius: 0.7em;
+  margin-bottom: 0.7rem;
+  overflow: hidden;
+  position: relative;
+  border: 1.5px solid rgba(120,120,255,0.10);
 }
 
 .caseImage {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Тень вокруг картинки */
+  transition: transform 0.3s ease;
 }
 
-.processTitle, .resultsTitle {
-  font-size: 2.3rem;
-  margin-top: 40px;
-  margin-bottom: 15px; /* Добавлен отступ снизу */
-  color: var(--color-primary);
+.caseIconContainer:hover .caseImage {
+  transform: scale(1.05);
+}
+
+.caseDetails {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f3f3f3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.process, .results, .priceBlock, .timelineBlock {
+  background: rgba(30,30,40,0.82);
+  backdrop-filter: blur(15px);
+  border-radius: 1.1em;
+  padding: 1.2rem 1rem;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow:
+    0 2px 12px 0 rgba(120,120,255,0.07),
+    0 1.5px 0 rgba(255,255,255,0.06) inset;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.processTitle, .resultsTitle, .priceBlock h2, .timelineBlock h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.7em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  position: relative;
+  display: inline-block;
+}
+
+.processTitle::after, .resultsTitle::after, .priceBlock h2::after, .timelineBlock h2::after {
+  content: '';
+  display: block;
+  margin: 0.7em 0 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: radial-gradient(circle, var(--color-primary-light) 60%, transparent 100%);
+  box-shadow: 0 0 16px 4px var(--color-primary-light);
+  opacity: 0.7;
 }
 
 .processList {
-  padding-left: 20px;
-  list-style-type: disc;
+  list-style: none;
+  padding: 0;
 }
 
 .processItem {
-  margin: 12px 0;
-  color: var(--color-text-light);
-}
-
-.results {
-  font-size: 1.3rem;
-  margin-top: 20px; /* Добавлен отступ сверху */
-  line-height: 1.8;
-  color: var(--color-text);
-}
-
-.ctaButton {
-  display: inline-block;
-  background: linear-gradient(135deg, #007bff, #00ccff);
-  padding: 16px 40px;
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  margin-top: 40px;
-  text-align: center;
-}
-
-.ctaButton:hover {
-  transform: translateY(-5px);
-  background-color: #0099cc; /* эффект при наведении */
-}
-
-.timelineBlock {
-  margin-top: 35px;
-}
-
-.timelineBlock h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: var(--color-primary);
-}
-
-.timelineBlock p {
-  font-size: 1.2rem;
+  margin: 15px 0;
+  padding-left: 2em;
+  position: relative;
+  color: #f3f3f3;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
+.processItem::before {
+  content: "•";
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+}
+
+.results p, .priceBlock p, .timelineBlock p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f3f3f3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
 .otherCaseStudies {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
-.caseCard {
+.otherCaseStudies h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  position: relative;
+}
+
+.otherCaseStudies h2::after {
+  content: '';
   display: block;
-  text-align: center;
-  margin: 25px 0;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.caseCard:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
-}
-
-.caseCard h3 {
-  margin-top: 15px;
-  font-size: 1.6rem;
-}
-
-.caseCard p {
-  font-size: 1.1rem;
-  margin-top: 5px;
+  margin: 0.7em 0 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: radial-gradient(circle, var(--color-primary-light) 60%, transparent 100%);
+  box-shadow: 0 0 16px 4px var(--color-primary-light);
+  opacity: 0.7;
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
 }
 
-@media (max-width: 768px) {
+.caseCard {
+  background: rgba(30,30,40,0.82);
+  backdrop-filter: blur(15px);
+  border-radius: 0.8em;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  padding: 1rem 0.7rem;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+
+.caseCard:hover {
+  transform: translateY(-5px) scale(1.025);
+  box-shadow: 0 10px 30px rgba(80,70,255,0.13);
+  border-color: var(--color-primary-light);
+}
+
+.caseCard h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.caseCard p {
+  font-size: 0.97rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+@keyframes borderGradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@media (max-width: 900px) {
   .caseStudyPage {
     padding: 20px;
   }
-
-  .title {
-    font-size: 2.2rem;
+  
+  .caseStudyHeader, .caseStudyContent, .process, .results, .priceBlock, .timelineBlock {
+    padding: 2rem 1.2rem;
   }
-
-  .processTitle, .resultsTitle {
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .processTitle, .resultsTitle, .priceBlock h2, .timelineBlock h2, .otherCaseStudies h2 {
     font-size: 1.8rem;
   }
+}
 
-  .processList {
-    padding-left: 15px;
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .caseCard {
+    border-radius: 0.6em;
+    padding: 0.7rem 0.4rem;
+  }
+  .caseIconContainer {
+    height: 100px;
+    border-radius: 0.5em;
+  }
+  .caseCard h3 {
+    font-size: 0.97rem;
+  }
+  .caseCard p {
+    font-size: 0.93rem;
+  }
+  .caseStudyPage {
+    padding: 10px;
+  }
+  
+  .caseStudyHeader, .caseStudyContent, .process, .results, .priceBlock, .timelineBlock {
+    padding: 0.8rem 0.5rem;
+    border-radius: 0.7em;
+    max-width: 100%;
+  }
+  
+  .processTitle, .resultsTitle, .priceBlock h2, .timelineBlock h2 {
+    font-size: 1.1rem;
+  }
+  
+  .results p, .priceBlock p, .timelineBlock p {
+    font-size: 0.97rem;
+  }
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0 16px 0;
+}
+
+.ctaWrapper .BtnCta, .ctaWrapper button, .ctaWrapper a {
+  min-width: 220px;
+  font-size: 1rem;
+  padding: 0.9em 2em;
+  border-radius: 1em;
+  box-shadow: 0 2px 12px 0 rgba(120,120,255,0.07), 0 1.5px 0 rgba(255,255,255,0.06) inset;
+}
+
+@media (max-width: 768px) {
+  .ctaWrapper {
+    margin: 16px 0 10px 0;
+  }
+  .ctaWrapper .BtnCta, .ctaWrapper button, .ctaWrapper a {
+    min-width: 160px;
+    font-size: 0.97rem;
+    padding: 0.7em 1.2em;
   }
 }

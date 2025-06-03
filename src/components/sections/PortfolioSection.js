@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import GlassCard from '../common/GlassCard';
 import { Tilt } from 'react-tilt';
 import aosInit from '@@/utils/aosInit';
 
@@ -52,7 +51,6 @@ const PortfolioSection = () => {
     aosInit();
   }, []);
 
-
   const filteredProjects = selectedCategory === "Все"
     ? projects
     : projects.filter(project => project.category && project.category === selectedCategory);
@@ -62,58 +60,63 @@ const PortfolioSection = () => {
   };
 
   return (
-    <section className="section" id='portfolio'>
-      <h2 data-aos="fade-up">Наши работы</h2>
-      <div className="portfolio-filter">
-        { categories.map((category) => (
-          <button
-            key={ category }
-            className={ `filter-btn ${selectedCategory === category ? 'active' : ''}` }
-            onClick={ () => setSelectedCategory(category) }
-          >
-            { category }
-          </button>
-        )) }
-      </div>
-      <div className="grid-3">
-        { filteredProjects.slice(0, visibleProjects).map((project) => (
-          <Tilt key={ project.id } options={ { max: 0, scale: 1, speed: 300 } }>
-            <GlassCard data-aos="fade-up" className="portfolio-card">
-              <div className="portfolio-image-container">
-                <img
-                  src={ project.image }
-                  alt={ project.title }
-                  style={ { width: '100%', borderRadius: '15px' } }
-                />
-              </div>
-              <div className="portfolio-card-content">
-                <h3>{ project.title }</h3>
-                <p>{ project.description }</p>
-                <div className="portfolio-buttons">
-                  { project.caseStudy && (
-                    <a href={ project.caseStudy } className="portfolio-link-btn">
-                      Читать кейс
-                    </a>
-                  ) }{
-                    project.link &&
-                    <a href={ project.link } className="portfolio-link-btn" target="_blank">
-                      Посмотреть сайт
-                    </a>
-                  }
-
+    <section id="portfolio">
+      <div className="portfolio-container">
+        <h2 className="portfolio-title" data-aos="fade-up">
+          Наши работы
+          <span className="portfolio-title-underline" />
+        </h2>
+        <div className="portfolio-filter">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+        <div className="portfolio-grid">
+          {filteredProjects.slice(0, visibleProjects).map((project) => (
+            <Tilt key={project.id} options={{ max: 8, scale: 1.03, speed: 400 }}>
+              <div className="glass-card portfolio-card ultra" data-aos="fade-up">
+                <div className="portfolio-image-container">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="portfolio-image"
+                  />
+                  <div className="portfolio-image-overlay" />
+                </div>
+                <div className="portfolio-card-content">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="portfolio-buttons">
+                    {project.caseStudy && (
+                      <a href={project.caseStudy} className="portfolio-link-btn">
+                        Читать кейс
+                      </a>
+                    )}
+                    {project.link && (
+                      <a href={project.link} className="portfolio-link-btn" target="_blank" rel="noopener noreferrer">
+                        Посмотреть сайт
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </GlassCard>
-          </Tilt>
-        )) }
-      </div>
-      { visibleProjects < filteredProjects.length && (
-        <div className="portfolio-btn-container">
-          <button onClick={ showAllProjects } className="portfolio-btn">
-            Показать еще
-          </button>
+            </Tilt>
+          ))}
         </div>
-      ) }
+        {visibleProjects < filteredProjects.length && (
+          <div className="portfolio-btn-container">
+            <button onClick={showAllProjects} className="portfolio-btn">
+              Показать еще
+            </button>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

@@ -2,7 +2,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
-  color: var(--color-text);
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 .hero {
@@ -10,44 +11,59 @@
   align-items: center;
   gap: 40px;
   margin-bottom: 60px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(30,30,40,0.82);
+  backdrop-filter: blur(18px);
+  border-radius: 2.2em;
+  padding: 48px 40px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  box-sizing: border-box;
 }
 
-.heroContent {
-  flex: 1;
+.heroContent h1 {
+  color: #fff;
+  font-size: 2.7rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 1px 0 #222;
+  margin-bottom: 0.5em;
+  position: relative;
 }
-
+.heroContent h1::after {
+  content: '';
+  display: block;
+  margin: 0.7em auto 0;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-primary));
+  opacity: 0.8;
+}
 .heroDescription {
   font-size: 1.2rem;
   margin: 20px 0;
-  color: var(--color-text-light);
+  color: #f3f3f3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .heroCta {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-top: 30px;
 }
-
 .heroGuarantee {
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--color-primary);
 }
-
 .heroImage {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .serviceIcon {
   font-size: 120px;
   color: var(--color-primary);
@@ -59,71 +75,92 @@
   gap: 30px;
   margin-bottom: 60px;
 }
-
 .problemBlock, .solutionBlock {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30,30,40,0.82);
   backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2.2em;
+  padding: 36px 30px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  box-sizing: border-box;
 }
-
-.problemBlock ul {
+.problemBlock h2, .solutionBlock h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  margin-bottom: 1em;
+}
+.problemBlock ul, .solutionBlock ul {
   list-style: none;
   padding: 0;
   margin-top: 20px;
 }
-
-.problemBlock li {
+.problemBlock li, .solutionBlock li {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 15px 0;
-  color: var(--color-text-light);
+  color: #f3f3f3;
+  font-size: 1.07rem;
 }
 
 .workSteps {
   margin-bottom: 60px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30,30,40,0.82);
   backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2.2em;
+  padding: 48px 40px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  box-sizing: border-box;
 }
-
 .workSteps h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  position: relative;
 }
-
+.workSteps h2::after {
+  content: '';
+  display: block;
+  margin: 0.7em auto 0;
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-primary));
+  opacity: 0.8;
+}
 .sectionSubtitle {
   text-align: center;
-  color: var(--color-text-light);
+  color: #f3f3f3;
   margin-bottom: 40px;
   font-size: 1.2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .stepsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
-
 .step {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(40,40,60,0.85);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
+  border-radius: 1.5em;
   padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(120,120,255,0.10);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
-
 .step:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.025);
+  box-shadow: 0 10px 30px rgba(80,70,255,0.13);
+  border-color: var(--color-primary-light);
 }
-
 .stepNumber {
   position: absolute;
   top: -15px;
@@ -137,33 +174,32 @@
   justify-content: center;
   font-weight: bold;
   color: white;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(80,70,255,0.18);
 }
-
 .stepIcon {
   font-size: 2rem;
   color: var(--color-primary);
   margin-bottom: 20px;
 }
-
 .step h3 {
   margin-bottom: 20px;
-  color: var(--color-text);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .step ul {
   list-style: none;
   padding: 0;
 }
-
 .step li {
   margin: 10px 0;
-  color: var(--color-text-light);
+  color: #f3f3f3;
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 1.01rem;
 }
-
 .step li:before {
   content: "•";
   color: var(--color-primary);
@@ -172,28 +208,50 @@
 .expertise {
   margin-bottom: 60px;
 }
-
 .expertiseContent {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .expertiseGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
-
 .expertiseCard {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30,30,40,0.82);
   backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2em;
+  padding: 36px 30px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
   text-align: center;
+  color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
-
+.expertiseCard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 0;
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-primary) 100%);
+  opacity: 0.7;
+  filter: blur(0.5px);
+  transition: opacity 0.3s;
+  animation: borderGradientMove 4s linear infinite;
+}
+.expertiseCard:hover::before {
+  opacity: 1;
+}
+.expertiseCard > * {
+  position: relative;
+  z-index: 1;
+}
 .expertiseIcon {
   font-size: 2.5rem;
   color: var(--color-primary);
@@ -203,237 +261,322 @@
 .pricing {
   margin-bottom: 60px;
 }
-
 .pricingCard {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30,30,40,0.82);
   backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2em;
+  padding: 48px 40px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
+  color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
-
+.pricingCard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 0;
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-primary) 100%);
+  opacity: 0.7;
+  filter: blur(0.5px);
+  transition: opacity 0.3s;
+  animation: borderGradientMove 4s linear infinite;
+}
+.pricingCard:hover::before {
+  opacity: 1;
+}
+.pricingCard > * {
+  position: relative;
+  z-index: 1;
+}
 .priceTag {
   font-size: 2.5rem;
   font-weight: bold;
   color: var(--color-primary);
   margin: 20px 0;
 }
-
 .timeline {
-  color: var(--color-text-light);
+  color: #f3f3f3;
   margin-bottom: 30px;
 }
-
 .valueProps {
   margin: 30px 0;
 }
-
 .valueProps p {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 15px 0;
-  color: var(--color-text-light);
+  color: #f3f3f3;
 }
 
 .faq {
   margin-bottom: 60px;
 }
-
 .faqItem {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30,30,40,0.82);
   backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2em;
+  padding: 36px 30px;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
   margin: 20px 0;
+  color: #fff;
+  box-sizing: border-box;
 }
-
 .faqItem h3 {
   margin-bottom: 15px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .faqItem p {
-  color: var(--color-text-light);
+  color: #f3f3f3;
 }
 
 .finalCta {
   text-align: center;
   margin-bottom: 60px;
 }
-
+.finalCta h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  margin-bottom: 0.7em;
+}
 .finalCta p {
-  color: var(--color-text-light);
+  color: #f3f3f3;
   margin: 20px 0;
 }
 
 .otherServices {
   margin-bottom: 60px;
 }
-
 .servicesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
-
 .serviceCard {
-  background: var(--color-glass-card-bg);
+  background: rgba(30,30,40,0.82);
   backdrop-filter: blur(15px);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-glass-card-border);
-  padding: var(--spacing-lg);
-  transition: all var(--transition-normal);
+  border-radius: 1.5em;
+  border: 1.5px solid rgba(120,120,255,0.13);
+  padding: 2rem 1.2rem;
+  transition: all 0.3s;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 1.2rem;
   height: 100%;
   position: relative;
   overflow: hidden;
+  color: #fff;
+  box-sizing: border-box;
 }
-
 .serviceCard:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary);
+  transform: translateY(-5px) scale(1.025);
+  box-shadow: 0 10px 30px rgba(80,70,255,0.13);
+  border-color: var(--color-primary-light);
 }
-
 .serviceIconContainer {
   width: 60px;
   height: 60px;
-  background: var(--gradient-glass);
-  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--spacing-sm);
-  transition: all var(--transition-normal);
+  margin-bottom: 1em;
+  transition: all 0.3s;
 }
-
 .serviceCard:hover .serviceIconContainer {
   transform: scale(1.1);
-  background: var(--gradient-primary);
+  background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
 }
-
 .serviceIcon {
   font-size: 1.8rem;
   color: var(--color-primary);
-  transition: all var(--transition-normal);
+  transition: all 0.3s;
 }
-
 .serviceCard:hover .serviceIcon {
-  color: var(--color-text-light);
+  color: #fff;
 }
-
 .serviceTitle {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-xs);
+  color: #fff;
+  margin-bottom: 0.5em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .serviceDescription {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
+  color: #f3f3f3;
+  font-size: 1.05rem;
   line-height: 1.5;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1em;
 }
-
 .serviceFeatures {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 0.5em;
 }
-
 .serviceFeatures li {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+  gap: 0.7em;
+  color: #f3f3f3;
+  font-size: 0.98rem;
 }
-
 .serviceFeatures li::before {
   content: "✓";
   color: var(--color-primary);
   font-weight: bold;
 }
-
 .servicePrice {
   margin-top: auto;
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-primary);
   text-align: center;
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--color-glass-card-border);
+  padding-top: 1em;
+  border-top: 1px solid rgba(120,120,255,0.13);
 }
-
 .serviceButton {
   display: inline-block;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  background: var(--gradient-primary);
-  color: var(--color-text-light);
+  padding: 0.7em 2em;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
   text-decoration: none;
-  border-radius: var(--radius-sm);
-  font-weight: 500;
+  border-radius: 1em;
+  font-weight: 700;
   text-align: center;
-  transition: all var(--transition-normal);
-  margin-top: var(--spacing-md);
+  transition: all 0.3s;
+  margin-top: 1em;
+  box-shadow: 0 2px 10px var(--color-primary-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
 }
-
 .serviceButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px var(--color-primary-light);
+  background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
 }
 
+@media (max-width: 900px) {
+  .hero, .workSteps, .problemBlock, .solutionBlock, .pricingCard, .faqItem, .expertiseCard {
+    padding: 2rem 1.2rem;
+  }
+  .servicePage {
+    padding: 20px;
+  }
+}
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 2rem 1.2rem;
   }
-
   .heroCta {
     justify-content: center;
   }
-
   .problemSolution {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
+  .workSteps {
+    padding: 2rem 1.2rem;
+  }
+  .expertiseGrid, .servicesGrid, .stepsContainer {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .pricingCard {
+    padding: 2rem 1.2rem;
+  }
+}
 
+/* Glow underline for section h2 */
+.workSteps h2, .pricingCard h2, .finalCta h2, .faq h2, .expertiseContent h2, .otherServices h2 {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 16px var(--color-primary-light), 0 2px 8px rgba(0,0,0,0.18);
+}
+.workSteps h2::after, .pricingCard h2::after, .finalCta h2::after, .faq h2::after, .expertiseContent h2::after, .otherServices h2::after {
+  content: '';
+  display: block;
+  margin: 0.7em auto 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: radial-gradient(circle, var(--color-primary-light) 60%, transparent 100%);
+  box-shadow: 0 0 16px 4px var(--color-primary-light);
+  opacity: 0.7;
+}
+
+/* CTA Button micro-animations */
+.serviceButton, .heroCta .BtnCta, .pricingCard .BtnCta, .stepsCta .BtnCta, .finalCta .BtnCta {
+  font-size: 1.13rem;
+  padding: 1em 2.5em;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 16px 0 var(--color-primary-light), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s cubic-bezier(.4,2,.6,1);
+}
+.serviceButton:hover, .heroCta .BtnCta:hover, .pricingCard .BtnCta:hover, .stepsCta .BtnCta:hover, .finalCta .BtnCta:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 6px 32px 0 var(--color-primary-light), 0 1.5px 0 rgba(255,255,255,0.08) inset;
+}
+
+/* More air between sections */
+.servicePage > section {
+  margin-bottom: 80px;
+}
+@media (max-width: 900px) {
+  .servicePage > section {
+    margin-bottom: 48px;
+  }
+}
+
+/* Softer backgrounds for cards/sections */
+.hero, .problemBlock, .solutionBlock, .workSteps, .expertiseCard, .pricingCard, .faqItem, .serviceCard {
+  background: rgba(36,38,54,0.90) !important;
+  border: 1.5px solid rgba(120,120,255,0.10) !important;
+  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.08), 0 1.5px 0 rgba(255,255,255,0.03) inset !important;
+}
+
+/* Mobile: cards separation, less border-radius, more gap */
+@media (max-width: 768px) {
+  .expertiseGrid, .servicesGrid, .stepsContainer {
+    gap: 1.7rem;
+  }
+  .expertiseCard, .serviceCard, .step {
+    border-radius: 1.1em;
+    margin-bottom: 0.7em;
+    box-sizing: border-box;
+  }
   .servicePage {
-    padding: 20px;
+    padding: 10px;
   }
+  .hero, .workSteps, .problemBlock, .solutionBlock, .pricingCard, .faqItem, .expertiseCard {
+    padding: 1.2rem 0.7rem;
+  }
+}
 
-  .serviceCard {
-    padding: var(--spacing-md);
-  }
-
-  .serviceIconContainer {
-    width: 50px;
-    height: 50px;
-  }
-
-  .serviceIcon {
-    font-size: 1.5rem;
-  }
-
-  .serviceTitle {
-    font-size: 1.2rem;
-  }
-
-  .serviceDescription {
-    font-size: 0.9rem;
-  }
-
-  .serviceFeatures li {
-    font-size: 0.85rem;
-  }
+@keyframes borderGradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }

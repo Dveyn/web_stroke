@@ -4,6 +4,7 @@ import styles from '../../styles/IntroSection.module.css';
 import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
 import { SiReact, SiNextdotjs, SiTypescript, SiFigma, SiJavascript } from "react-icons/si";
+import { FaArrowRight } from 'react-icons/fa';
 import aosInit from '@@/utils/aosInit';
 import { useEffect } from 'react';
 
@@ -19,50 +20,55 @@ const IntroSection = () => {
     useEffect(() => {
       aosInit();
     }, []);
+
     return (
-        <section className={styles.header} id='home'>
-            <div className={styles.animatedBackground}></div>
-            <div className={styles.headerOverlay}></div>
-            <div className={styles.headerContent}>
-                <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} perspective={1000} transitionSpeed={1000}>
+        <section className={styles.intro} id="home">
+            <div className={styles.heroCard}>
+                <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} perspective={900} transitionSpeed={900} glareEnable={false}>
                     <motion.h1
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8 }}
-                      className={styles.tiltText}
+                      className={styles.title}
                     >
-                      ВЕБШТРИХ
+                      Сайты, которые продают. Решения, которые работают.
                     </motion.h1>
                 </Tilt>
-                <p className="fade-in" data-aos="fade-up" data-aos-delay="200">Сайты, которые продают. Решения, которые работают.</p>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  href="/#contact"
-                  onClick={()=> {
-                    try{
-                      ym(97829589,'reachGoal','on_cta')
-                    } catch(error){}
-                  }}
-                  className={`${styles.ctaButton} ${styles.ctaAnimation}`}
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
-                  Заказать сайт
-                </motion.a>
-            </div>
-            <div className={styles.floatingIcons}>
-              {floatingIcons.map((item, index) => (
-                <motion.div 
-                  key={index}
-                  className={styles.floatingIcon}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: [20, -20, 20] }}
-                  transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", delay: index * 0.3 }}
-                >
-                  {item.icon}
-                </motion.div>
-              ))}
+                <div className={styles.subtitle}>
+                    Современные сайты и сервисы для роста вашего бизнеса
+                </div>
+                <div className={styles.socialProof}>
+                    100+ успешных проектов для клиентов по всей России
+                </div>
+                <div className={styles.buttons}>
+                    <motion.a
+                      whileHover={{ scale: 1.07 }}
+                      whileTap={{ scale: 0.97 }}
+                      href="/#contact"
+                      onClick={() => {
+                        try {
+                          ym(97829589, 'reachGoal', 'on_cta');
+                        } catch (error) {}
+                      }}
+                      className={styles.primaryButton}
+                    >
+                      Заказать сайт <FaArrowRight />
+                    </motion.a>
+                </div>
+                <div className={styles.techIcons}>
+                    {floatingIcons.map((item, index) => (
+                      <motion.div
+                        key={index}
+                        className={styles.techIcon}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.5 + index * 0.15 }}
+                        title={item.alt}
+                      >
+                        {item.icon}
+                      </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

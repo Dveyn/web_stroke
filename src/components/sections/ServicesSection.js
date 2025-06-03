@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import GlassCard from '../common/GlassCard';
-import { FaBuilding, FaShoppingCart, FaLaptopCode, FaSearch, FaBullhorn } from "react-icons/fa";
+import { FaBuilding, FaShoppingCart, FaLaptopCode, FaSearch, FaBullhorn, FaCheckCircle, FaLightbulb, FaChartBar } from "react-icons/fa";
 import aosInit from '@@/utils/aosInit';
 import { BtnCta } from '../common/btnCta';
 
@@ -49,36 +48,56 @@ const services = [
   }
 ];
 
-const ServicesSection = () => {
+const whyList = [
+  { icon: <FaCheckCircle className="why-icon" />, text: 'Работаем официально, договор, гарантия' },
+  { icon: <FaLightbulb className="why-icon" />, text: 'Используем современные технологии' },
+  { icon: <FaChartBar className="why-icon" />, text: 'Проекты под ключ с аналитикой' },
+];
 
+const ServicesSection = () => {
   useEffect(() => {
     aosInit();
   }, []);
   return (
-    <section className="section" id='service'>
-      <h2 data-aos="fade-up">Наши услуги</h2>
-      <div className="grid-3">
-        { services.map((service, index) => (
-          <GlassCard key={ index } className="glass-card clickable" data-aos="fade-up" data-aos-delay={ index * 100 } onClick={ () => window.location.href = service.link }>
-            <h3>{ service.icon } <a href={ service.link }>{ service.title }</a></h3>
-            <p>{ service.description }</p>
-            <ul className="service-benefits">
-              { service.benefits.map((benefit, i) => <li key={ i }>{ benefit }</li>) }
-            </ul>
-            <p className="service-price">{ service.price }</p>
-            <a href={ service.link } className="cta-button">Подробнее об услуге</a>
-          </GlassCard>
-        )) }
-      </div>
+    <section id="service">
+      <div className="service-container">
+        <h2 className="service-title" data-aos="fade-up">Наши услуги</h2>
+        <div className="service-grid">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="glass-card service-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              tabIndex={0}
+              onClick={() => window.location.href = service.link}
+            >
+              <div className="service-icon">{service.icon}</div>
+              <h3 className="service-card-title">
+                <a href={service.link}>{service.title}</a>
+              </h3>
+              <p className="service-card-desc">{service.description}</p>
+              <ul className="service-benefits">
+                {service.benefits.map((benefit, i) => <li key={i}>{benefit}</li>)}
+              </ul>
+              <p className="service-price">{service.price}</p>
+              <a href={service.link} className="cta-button">Подробнее об услуге</a>
+            </div>
+          ))}
+        </div>
 
-      <div className="cta-container">
-        <h2>Почему выбирают нас?</h2>
-        <ul className="cta-benefits-list">
-          <li>Работаем официально, договор, гарантия</li>
-          <li>Используем современные технологии</li>
-          <li>Проекты под ключ с аналитикой</li>
-        </ul>
-        <BtnCta />
+        <div className="cta-container why-choose-us">
+          <h2 className="why-title">Почему выбирают нас?</h2>
+          <div className="why-grid">
+            {whyList.map((item, i) => (
+              <div className="why-chip" key={i}>
+                {item.icon}
+                {item.text}
+              </div>
+            ))}
+          </div>
+          <BtnCta />
+        </div>
       </div>
     </section>
   );

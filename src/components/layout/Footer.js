@@ -50,8 +50,8 @@ const Footer = () => {
           <p className="copyright">&copy; {new Date().getFullYear()} ВЕБШТРИХ. Все права защищены.</p>
           <div className="legal">
             <Link href="/privacy-policy" className="legal-link">Политика конфиденциальности</Link>
-            <Link href="/terms-of-service" className="legal-link">Пользовательское соглашение</Link>
-            <Link href="/cookie-policy" className="legal-link">Политика использования cookies</Link>
+            <Link href="/terms-of-use" className="legal-link">Пользовательское соглашение</Link>
+            <Link href="/cookies-policy" className="legal-link">Политика использования cookies</Link>
           </div>
         </div>
       </div>

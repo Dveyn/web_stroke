@@ -2349,3 +2349,28 @@ textarea {
   }
   .contact-map-container { border-radius: 1.1em; }
 }
+
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--neutral-200);
+  cursor: pointer;
+}
+
+.consent-label input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.consent-label a {
+  color: var(--primary-light);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.consent-label a:hover {
+  color: var(--primary);
+}

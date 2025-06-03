@@ -11,6 +11,7 @@ const ContactSection = () => {
     email: '',
     phone: '',
     message: '',
+    consent: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -21,20 +22,29 @@ const ContactSection = () => {
   }, []);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+
+    if (!formData.consent) {
+      setError('Необходимо согласие на обработку персональных данных');
+      setIsSubmitting(false);
+      return;
+    }
+
     const sanitizedData = {
       name: DOMPurify.sanitize(formData.name),
       email: DOMPurify.sanitize(formData.email),
       phone: DOMPurify.sanitize(formData.phone),
       message: DOMPurify.sanitize(formData.message),
+      consent: formData.consent
     };
+
     if (!sanitizedData.email.trim() && !sanitizedData.phone.trim()) {
       setError('Укажите хотя бы один контакт: телефон или email.');
       setIsSubmitting(false);
@@ -45,24 +55,22 @@ const ContactSection = () => {
       setIsSubmitting(false);
       return;
     }
+
     try {
-      const response = await fetch('https://b24-wsl00q.bitrix24.ru/rest/1/pcrorxl3f65pf5zf/crm.lead.add', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fields: {
-            TITLE: `Новый лид от ${sanitizedData.name}`,
-            NAME: sanitizedData.name,
-            EMAIL: [{ VALUE: sanitizedData.email, VALUE_TYPE: 'WORK' }],
-            PHONE: [{ VALUE: sanitizedData.phone, VALUE_TYPE: 'WORK' }],
-            COMMENTS: sanitizedData.message,
-          },
-        }),
+        body: JSON.stringify(sanitizedData),
       });
-      if (!response.ok) throw new Error('Ошибка при отправке данных');
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Ошибка при отправке данных');
+      }
+
       try { ym(97829589,'reachGoal','send_leed'); } catch (error) { console.error('Ошибка при отправке Yandex Metrika:', error); }
       setIsSuccess(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '', consent: false });
     } catch (err) {
       setError('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
     } finally {
@@ -127,6 +135,23 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                   />
+                </div>
+                <div className="form-group">
+                  <label className="consent-label">
+                    <input
+                      type="checkbox"
+                      name="consent"
+                      checked={formData.consent}
+                      onChange={handleChange}
+                      required
+                    />
+                    <span>
+                      Я согласен на обработку персональных данных в соответствии с{' '}
+                      <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+                        политикой конфиденциальности
+                      </a>
+                    </span>
+                  </label>
                 </div>
                 {error && <p className="error-message">{error}</p>}
                 <button type="submit" className="cta-button" disabled={isSubmitting}>

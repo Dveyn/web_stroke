@@ -57,6 +57,7 @@ const ContactSection = () => {
     }
 
     try {
+      console.log('📝 ContactSection: Starting form submission...');
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -65,13 +66,61 @@ const ContactSection = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
+        console.error('❌ ContactSection: Form submission failed:', errorData);
         throw new Error(errorData.error || 'Ошибка при отправке данных');
       }
 
-      try { ym(97829589,'reachGoal','send_leed'); } catch (error) { console.error('Ошибка при отправке Yandex Metrika:', error); }
+      console.log('✅ ContactSection: Form submitted successfully');
+      console.log('🔄 ContactSection: Attempting to send Yandex Metrika event...');
+
+      // Отправка события в Яндекс Метрику
+      if (typeof window !== 'undefined') {
+        console.log('ℹ️ ContactSection: Window object is available');
+        if (window.ym) {
+          console.log('ℹ️ ContactSection: Yandex Metrika is available');
+          try {
+            console.log('📤 ContactSection: Sending reachGoal event...');
+            console.log('📊 ContactSection: Event details:', {
+              counterId: 97829589,
+              goal: 'send_leed',
+              formData: {
+                hasName: !!sanitizedData.name,
+                hasEmail: !!sanitizedData.email,
+                hasPhone: !!sanitizedData.phone,
+                hasMessage: !!sanitizedData.message
+              }
+            });
+            
+            // Отправляем событие
+            window.ym(97829589, 'reachGoal', 'send_leed', {
+              formData: {
+                hasName: !!sanitizedData.name,
+                hasEmail: !!sanitizedData.email,
+                hasPhone: !!sanitizedData.phone,
+                hasMessage: !!sanitizedData.message
+              }
+            });
+            
+            console.log('✅ ContactSection: Yandex Metrika event sent successfully');
+          } catch (error) {
+            console.error('❌ ContactSection: Error sending Yandex Metrika event:', error);
+            console.error('❌ ContactSection: Error details:', {
+              name: error.name,
+              message: error.message,
+              stack: error.stack
+            });
+          }
+        } else {
+          console.warn('⚠️ ContactSection: Yandex Metrika is not available (window.ym is undefined)');
+        }
+      } else {
+        console.warn('⚠️ ContactSection: Window object is not available');
+      }
+
       setIsSuccess(true);
       setFormData({ name: '', email: '', phone: '', message: '', consent: false });
     } catch (err) {
+      console.error('❌ ContactSection: Form submission error:', err);
       setError('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
     } finally {
       setIsSubmitting(false);

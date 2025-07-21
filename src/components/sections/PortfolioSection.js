@@ -11,6 +11,23 @@ const PortfolioSection = () => {
 
   const projects = [
     {
+      id: 6,
+      image: '/img/portfolio/maxflow.png',
+      title: 'MaxFlow — рекламная сеть для Max',
+      description: 'Демо-платформа, которая помогает компаниям быстро запускать рекламу и получать новых клиентов в мессенджере Max. Всё просто: выбираете аудиторию — система сама подбирает лучшие каналы.',
+      caseStudy: '/case-studies/maxflow',
+      category: 'Корпоративные сайты'
+    },
+    {
+      id: 5,
+      image: '/img/portfolio/connectmax.png',
+      title: 'ConnectMax — каталог для Max',
+      description: 'Каталог чатов, ботов и каналов для мессенджера Max.',
+      caseStudy: '/case-studies/connectmax',
+      link: 'https://connectmax.ru/',
+      category: 'Корпоративные сайты'
+    },
+    {
       id: 1,
       image: '/img/portfolio/avatar.png',
       title: 'Сайт для бизнес-коуча',
@@ -44,7 +61,7 @@ const PortfolioSection = () => {
       description: 'Разработка лендинга для адвоката...',
       caseStudy: '/case-studies/lawyer-landing',
       category: 'Лендинги'
-    },
+    }
   ];
 
   useEffect(() => {
@@ -63,9 +80,12 @@ const PortfolioSection = () => {
     <section id="portfolio">
       <div className="portfolio-container">
         <h2 className="portfolio-title" data-aos="fade-up">
-          Наши работы
+          Примеры наших работ
           <span className="portfolio-title-underline" />
         </h2>
+        <p style={{textAlign: 'center', color: '#ccc', marginBottom: '2rem', fontSize: '1.2rem'}}>
+          Вот сайты, которые мы сделали для клиентов. Каждый из них уже помогает зарабатывать и привлекать новых покупателей.
+        </p>
         <div className="portfolio-filter">
           {categories.map((category) => (
             <button
@@ -73,7 +93,10 @@ const PortfolioSection = () => {
               className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
               onClick={() => setSelectedCategory(category)}
             >
-              {category}
+              {category === 'Все' ? 'Все проекты' :
+                category === 'Лендинги' ? 'Лендинги (одностраничные)' :
+                category === 'E-commerce' ? 'Интернет-магазины' :
+                category === 'Корпоративные сайты' ? 'Сайты для бизнеса' : category}
             </button>
           ))}
         </div>

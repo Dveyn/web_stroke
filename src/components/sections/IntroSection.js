@@ -12,11 +12,11 @@ const IntroSection = () => {
     const [isHovered, setIsHovered] = useState(false);
     
     const floatingIcons = [
-      { icon: <SiReact />, alt: "React", tooltip: "Современный UI" },
-      { icon: <SiNextdotjs />, alt: "Next.js", tooltip: "Быстрая загрузка" },
-      { icon: <SiTypescript />, alt: "TypeScript", tooltip: "Надежный код" },
-      { icon: <SiFigma />, alt: "Figma", tooltip: "Современный дизайн" },
-      { icon: <SiJavascript />, alt: "JavaScript", tooltip: "Интерактивность" },
+      { icon: <SiReact />, alt: "React", tooltip: "Современный UI", color: "#61DAFB" },
+      { icon: <SiNextdotjs />, alt: "Next.js", tooltip: "Быстрая загрузка", color: "#000000" },
+      { icon: <SiTypescript />, alt: "TypeScript", tooltip: "Надежный код", color: "#3178C6" },
+      { icon: <SiFigma />, alt: "Figma", tooltip: "Современный дизайн", color: "#F24E1E" },
+      { icon: <SiJavascript />, alt: "JavaScript", tooltip: "Интерактивность", color: "#F7DF1E" },
     ];
 
     const benefits = [
@@ -32,47 +32,39 @@ const IntroSection = () => {
 
     return (
         <section className={styles.intro} id="home">
+            <div className={styles.backgroundElements}>
+                <div className={styles.gradientCircle}></div>
+                <div className={styles.gradientCircle2}></div>
+                <div className={styles.dotsPattern}></div>
+            </div>
             <div className={styles.heroCard}>
-                <Tilt 
-                  tiltMaxAngleX={10} 
-                  tiltMaxAngleY={10} 
-                  perspective={900} 
-                  transitionSpeed={900} 
-                  glareEnable={true}
-                  glareMaxOpacity={0.2}
-                  glareColor="#ffffff"
-                  glarePosition="all"
-                  glareBorderRadius="20px"
-                >
-                    <motion.h1
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8 }}
-                      className={styles.title}
-                    >
-                      Сайты, которые продают. Решения, которые работают.
-                    </motion.h1>
-                </Tilt>
+                <h1 className={styles.title}>
+                  Ваш сайт — ваш доход. Мы поможем вам получать больше клиентов!
+                </h1>
                 <div className={styles.subtitle}>
-                    Современные сайты и сервисы для роста вашего бизнеса
+                  Сделаем сайт, который будет приносить вам деньги и новых покупателей. Всё просто — вы рассказываете, что нужно, мы делаем под ключ.
                 </div>
                 <div className={styles.socialProof}>
                     <FaCheckCircle style={{ marginRight: '8px', color: 'var(--primary)' }} />
-                    Создаем качественные сайты для развития вашего бизнеса
+                    Уже помогли десяткам бизнесов начать зарабатывать через интернет
                 </div>
                 <div className={styles.benefits}>
-                    {benefits.map((benefit, index) => (
-                        <motion.div
-                            key={index}
-                            className={styles.benefit}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                            <FaRocket style={{ marginRight: '8px', color: 'var(--primary)' }} />
-                            {benefit}
-                        </motion.div>
-                    ))}
+                    <div className={styles.benefit}>
+                        <FaRocket style={{ marginRight: '8px', color: 'var(--primary)' }} />
+                        Приведём вам новых клиентов с сайта
+                    </div>
+                    <div className={styles.benefit}>
+                        <FaRocket style={{ marginRight: '8px', color: 'var(--primary)' }} />
+                        Всё объясним простыми словами, без сложных терминов
+                    </div>
+                    <div className={styles.benefit}>
+                        <FaRocket style={{ marginRight: '8px', color: 'var(--primary)' }} />
+                        Берём на себя всю работу — от идеи до результата
+                    </div>
+                    <div className={styles.benefit}>
+                        <FaRocket style={{ marginRight: '8px', color: 'var(--primary)' }} />
+                        Поддержка и помощь после запуска
+                    </div>
                 </div>
                 <div className={styles.buttons}>
                     <motion.a
@@ -88,7 +80,7 @@ const IntroSection = () => {
                       onMouseEnter={() => setIsHovered(true)}
                       onMouseLeave={() => setIsHovered(false)}
                     >
-                      Заказать сайт 
+                      Получить сайт
                       <motion.span
                         animate={{ x: isHovered ? 5 : 0 }}
                         transition={{ duration: 0.2 }}
@@ -107,8 +99,10 @@ const IntroSection = () => {
                         transition={{ duration: 0.7, delay: 0.5 + index * 0.15 }}
                         title={item.tooltip}
                         whileHover={{ scale: 1.1, rotate: 5 }}
+                        style={{ color: item.color }}
                       >
                         {item.icon}
+                        <span className={styles.techTooltip}>{item.tooltip}</span>
                       </motion.div>
                     ))}
                 </div>

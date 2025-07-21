@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" href="/img/favicon.png"></link>
         <meta name="yandex-verification" content="cfdccd405acae9f8" />
         <YandexMetrika />
+        <script src="//code.jivo.ru/widget/F4izd3z8dt" async></script>
       </head>
       <body>
         <Header />

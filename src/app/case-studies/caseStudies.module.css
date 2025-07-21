@@ -7,12 +7,12 @@
 }
 
 .caseStudyHeader {
-  background: rgba(30,30,40,0.82);
+  background: rgba(30, 30, 40, 0.82);
   backdrop-filter: blur(18px);
   border-radius: 2.2em;
   padding: 48px 40px;
-  border: 1.5px solid rgba(120,120,255,0.13);
-  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  border: 1.5px solid rgba(120, 120, 255, 0.13);
+  box-shadow: 0 8px 40px 0 rgba(80, 70, 255, 0.10), 0 1.5px 0 rgba(255, 255, 255, 0.04) inset;
   margin-bottom: 60px;
   position: relative;
   overflow: hidden;
@@ -37,7 +37,7 @@
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  text-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 1px 0 #222;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 1px 0 #222;
   margin-bottom: 0.5em;
   position: relative;
   z-index: 1;
@@ -58,18 +58,18 @@
   font-size: 1.2rem;
   line-height: 1.8;
   color: #f3f3f3;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   position: relative;
   z-index: 1;
 }
 
 .caseStudyContent {
-  background: rgba(30,30,40,0.82);
+  background: rgba(30, 30, 40, 0.82);
   backdrop-filter: blur(15px);
   border-radius: 2.2em;
   padding: 48px 40px;
-  border: 1.5px solid rgba(120,120,255,0.13);
-  box-shadow: 0 8px 40px 0 rgba(80,70,255,0.10), 0 1.5px 0 rgba(255,255,255,0.04) inset;
+  border: 1.5px solid rgba(120, 120, 255, 0.13);
+  box-shadow: 0 8px 40px 0 rgba(80, 70, 255, 0.10), 0 1.5px 0 rgba(255, 255, 255, 0.04) inset;
   margin-bottom: 60px;
   position: relative;
   overflow: hidden;
@@ -78,16 +78,16 @@
 .caseIconContainer {
   width: 100%;
   height: 120px;
-  background: rgba(40,40,60,0.85);
+  background: rgba(40, 40, 60, 0.85);
   border-radius: 0.7em;
   margin-bottom: 0.7rem;
   overflow: hidden;
   position: relative;
-  border: 1.5px solid rgba(120,120,255,0.10);
+  border: 1.5px solid rgba(120, 120, 255, 0.10);
+  text-align: center;
 }
 
 .caseImage {
-  width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -101,18 +101,21 @@
   font-size: 1.2rem;
   line-height: 1.8;
   color: #f3f3f3;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
-.process, .results, .priceBlock, .timelineBlock {
-  background: rgba(30,30,40,0.82);
+.process,
+.results,
+.priceBlock,
+.timelineBlock {
+  background: rgba(30, 30, 40, 0.82);
   backdrop-filter: blur(15px);
   border-radius: 1.1em;
   padding: 1.2rem 1rem;
-  border: 1.5px solid rgba(120,120,255,0.13);
+  border: 1.5px solid rgba(120, 120, 255, 0.13);
   box-shadow:
-    0 2px 12px 0 rgba(120,120,255,0.07),
-    0 1.5px 0 rgba(255,255,255,0.06) inset;
+    0 2px 12px 0 rgba(120, 120, 255, 0.07),
+    0 1.5px 0 rgba(255, 255, 255, 0.06) inset;
   margin-bottom: 24px;
   position: relative;
   overflow: hidden;
@@ -121,17 +124,23 @@
   margin-right: auto;
 }
 
-.processTitle, .resultsTitle, .priceBlock h2, .timelineBlock h2 {
+.processTitle,
+.resultsTitle,
+.priceBlock h2,
+.timelineBlock h2 {
   font-size: 1.3rem;
   font-weight: 800;
   margin-bottom: 0.7em;
   color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   position: relative;
   display: inline-block;
 }
 
-.processTitle::after, .resultsTitle::after, .priceBlock h2::after, .timelineBlock h2::after {
+.processTitle::after,
+.resultsTitle::after,
+.priceBlock h2::after,
+.timelineBlock h2::after {
   content: '';
   display: block;
   margin: 0.7em 0 0;
@@ -165,11 +174,13 @@
   font-size: 1.5em;
 }
 
-.results p, .priceBlock p, .timelineBlock p {
+.results p,
+.priceBlock p,
+.timelineBlock p {
   font-size: 1rem;
   line-height: 1.5;
   color: #f3f3f3;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .otherCaseStudies {
@@ -181,7 +192,7 @@
   font-weight: 800;
   margin-bottom: 1em;
   color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   position: relative;
 }
 
@@ -205,10 +216,10 @@
 }
 
 .caseCard {
-  background: rgba(30,30,40,0.82);
+  background: rgba(30, 30, 40, 0.82);
   backdrop-filter: blur(15px);
   border-radius: 0.8em;
-  border: 1.5px solid rgba(120,120,255,0.13);
+  border: 1.5px solid rgba(120, 120, 255, 0.13);
   padding: 1rem 0.7rem;
   transition: all 0.3s;
   display: flex;
@@ -223,7 +234,7 @@
 
 .caseCard:hover {
   transform: translateY(-5px) scale(1.025);
-  box-shadow: 0 10px 30px rgba(80,70,255,0.13);
+  box-shadow: 0 10px 30px rgba(80, 70, 255, 0.13);
   border-color: var(--color-primary-light);
 }
 
@@ -232,7 +243,7 @@
   font-weight: 600;
   color: #fff;
   margin: 0;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .caseCard p {
@@ -242,24 +253,38 @@
 }
 
 @keyframes borderGradientMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 @media (max-width: 900px) {
   .caseStudyPage {
     padding: 20px;
   }
-  
-  .caseStudyHeader, .caseStudyContent, .process, .results, .priceBlock, .timelineBlock {
+
+  .caseStudyHeader,
+  .caseStudyContent,
+  .process,
+  .results,
+  .priceBlock,
+  .timelineBlock {
     padding: 2rem 1.2rem;
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
-  
-  .processTitle, .resultsTitle, .priceBlock h2, .timelineBlock h2, .otherCaseStudies h2 {
+
+  .processTitle,
+  .resultsTitle,
+  .priceBlock h2,
+  .timelineBlock h2,
+  .otherCaseStudies h2 {
     font-size: 1.8rem;
   }
 }
@@ -269,35 +294,50 @@
     grid-template-columns: 1fr;
     gap: 0.7rem;
   }
+
   .caseCard {
     border-radius: 0.6em;
     padding: 0.7rem 0.4rem;
   }
+
   .caseIconContainer {
     height: 100px;
     border-radius: 0.5em;
   }
+
   .caseCard h3 {
     font-size: 0.97rem;
   }
+
   .caseCard p {
     font-size: 0.93rem;
   }
+
   .caseStudyPage {
     padding: 10px;
   }
-  
-  .caseStudyHeader, .caseStudyContent, .process, .results, .priceBlock, .timelineBlock {
+
+  .caseStudyHeader,
+  .caseStudyContent,
+  .process,
+  .results,
+  .priceBlock,
+  .timelineBlock {
     padding: 0.8rem 0.5rem;
     border-radius: 0.7em;
     max-width: 100%;
   }
-  
-  .processTitle, .resultsTitle, .priceBlock h2, .timelineBlock h2 {
+
+  .processTitle,
+  .resultsTitle,
+  .priceBlock h2,
+  .timelineBlock h2 {
     font-size: 1.1rem;
   }
-  
-  .results p, .priceBlock p, .timelineBlock p {
+
+  .results p,
+  .priceBlock p,
+  .timelineBlock p {
     font-size: 0.97rem;
   }
 }
@@ -309,19 +349,24 @@
   margin: 24px 0 16px 0;
 }
 
-.ctaWrapper .BtnCta, .ctaWrapper button, .ctaWrapper a {
+.ctaWrapper .BtnCta,
+.ctaWrapper button,
+.ctaWrapper a {
   min-width: 220px;
   font-size: 1rem;
   padding: 0.9em 2em;
   border-radius: 1em;
-  box-shadow: 0 2px 12px 0 rgba(120,120,255,0.07), 0 1.5px 0 rgba(255,255,255,0.06) inset;
+  box-shadow: 0 2px 12px 0 rgba(120, 120, 255, 0.07), 0 1.5px 0 rgba(255, 255, 255, 0.06) inset;
 }
 
 @media (max-width: 768px) {
   .ctaWrapper {
     margin: 16px 0 10px 0;
   }
-  .ctaWrapper .BtnCta, .ctaWrapper button, .ctaWrapper a {
+
+  .ctaWrapper .BtnCta,
+  .ctaWrapper button,
+  .ctaWrapper a {
     min-width: 160px;
     font-size: 0.97rem;
     padding: 0.7em 1.2em;

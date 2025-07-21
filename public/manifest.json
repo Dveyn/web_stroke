@@ -1,0 +1,21 @@
+{
+  "name": "ВебШтрих — разработка сайтов и веб-приложений",
+  "short_name": "ВебШтрих",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#18181b",
+  "theme_color": "#7c3aed",
+  "description": "Создаём современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript. Более 100 успешных проектов.",
+  "icons": [
+    {
+      "src": "/img/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

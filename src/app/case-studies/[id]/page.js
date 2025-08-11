@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import styles from "../caseStudies.module.css"; // импорт стилей
-import Head from "next/head";
 import { BtnCta } from "@@/components/common/btnCta";
 
 // Статичные данные кейсов
@@ -124,7 +123,14 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `Кейс - ${caseStudy.title} | ВебШтрих`,
       description: caseStudy.description,
-      images: [caseStudy.image], // Можно добавить изображение для Open Graph
+      images: [
+        {
+          url: caseStudy.image || "/img/logo.png",
+          width: 1200,
+          height: 630,
+          alt: caseStudy.title,
+        },
+      ],
     },
   };
 }
@@ -148,10 +154,6 @@ const CaseStudy = ({ params }) => {
 
   return (
     <>
-      <Head>
-        <title>{ caseStudy.title }</title>
-        <meta name="description" content={ caseStudy.description } />
-      </Head>
       <div className={ styles.caseStudyPage }>
         <div className={ styles.caseStudyHeader }>
           <h1 className={ styles.title }>{ caseStudy.title }</h1>

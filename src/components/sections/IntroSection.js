@@ -59,7 +59,7 @@ const IntroSection = () => {
           </div>
           <div className={ styles.benefit }>
             <FaRocket style={ { marginRight: '8px', color: 'var(--primary)' } } />
-            БПоддержка и развитие — не бросаем проект после запуска.
+            Поддержка и развитие — не бросаем проект после запуска.
 
           </div>
 

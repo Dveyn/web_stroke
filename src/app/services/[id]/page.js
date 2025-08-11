@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { notFound } from "next/navigation";
 import styles from "../services.module.css";
 import {
   FaBuilding, FaShoppingCart, FaLaptopCode,
@@ -95,7 +95,14 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `Услуга - ${service.title} | ВебШтрих`,
       description: service.description,
-      images: [service.image], // Можно добавить изображение для Open Graph
+      images: [
+        {
+          url: "/img/logo.png",
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
     },
   };
 }
@@ -105,17 +112,7 @@ export default function ServiceDetail({ params }) {
   const service = serviceData[params.id];
 
   if (!service) {
-    return (
-      <div className={ styles.errorPage }>
-        <h1>Услуга не найдена</h1>
-        <p>
-          Проверьте правильность ссылки или вернитесь на{ " " }
-          <a href="/services" className={ styles.link }>
-            страницу услуг
-          </a>.
-        </p>
-      </div>
-    );
+    notFound();
   }
 
   const otherServices = Object.entries(serviceData)
@@ -124,11 +121,6 @@ export default function ServiceDetail({ params }) {
 
   return (
     <>
-      <Head>
-        <title>{ service.title } | ВебШтрих</title>
-        <meta name="description" content={ service.description } />
-      </Head>
-
       <div className={ styles.servicePage }>
         {/* Hero Section с сильным CTA */ }
         <section className={ styles.hero }>

@@ -18,7 +18,7 @@ export const metadata = {
     siteName: 'ВебШтрих',
     images: [
       {
-        url: '/img/og-image.jpg',
+        url: '/img/logo.png',
         width: 1200,
         height: 630,
         alt: 'ВебШтрих — разработка сайтов и веб-приложений',
@@ -31,7 +31,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'ВебШтрих — разработка сайтов и веб-приложений',
     description: 'Создаем современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript.',
-    images: ['/img/og-image.jpg'],
+    images: ['/img/logo.png'],
   },
   robots: {
     index: true,

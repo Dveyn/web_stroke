@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://webstroke.ru/sitemap.xml
-Host: https://webstroke.ru 
+Host: webstroke.ru

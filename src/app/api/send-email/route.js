@@ -6,6 +6,19 @@ export async function POST(req) {
   
   try {
     const { name, phone, email, message } = await req.json();
+    // Basic server-side validation and sanitization
+    const trimmed = {
+      name: (name || '').toString().slice(0, 200).trim(),
+      phone: (phone || '').toString().slice(0, 50).trim(),
+      email: (email || '').toString().slice(0, 200).trim(),
+      message: (message || '').toString().slice(0, 5000).trim(),
+    };
+    if (!trimmed.email && !trimmed.phone) {
+      return NextResponse.json({ error: 'Укажите телефон или email' }, { status: 400 });
+    }
+    if (!trimmed.message) {
+      return NextResponse.json({ error: 'Пустое сообщение' }, { status: 400 });
+    }
     console.log('📧 Email API: Received form data:', { name, phone, email, messageLength: message?.length });
 
     // Создаем транспорт для отправки email
@@ -18,10 +31,8 @@ export async function POST(req) {
         pass: process.env.EMAIL_PASSWORD,
       },
       tls: {
-        rejectUnauthorized: false // Для разработки
+        rejectUnauthorized: true
       },
-      debug: true, // Включаем отладку
-      logger: true // Включаем логирование
     });
 
     // Проверяем подключение
@@ -41,12 +52,12 @@ export async function POST(req) {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333;">Новая заявка с сайта</h2>
           <div style="background: #f5f5f5; padding: 20px; border-radius: 5px;">
-            <p><strong>Имя:</strong> ${name || 'Не указано'}</p>
-            <p><strong>Телефон:</strong> ${phone || 'Не указан'}</p>
-            <p><strong>Email:</strong> ${email || 'Не указан'}</p>
+            <p><strong>Имя:</strong> ${trimmed.name || 'Не указано'}</p>
+            <p><strong>Телефон:</strong> ${trimmed.phone || 'Не указан'}</p>
+            <p><strong>Email:</strong> ${trimmed.email || 'Не указан'}</p>
             <p><strong>Сообщение:</strong></p>
             <div style="background: white; padding: 15px; border-radius: 3px; margin-top: 10px;">
-              ${message || 'Сообщение отсутствует'}
+              ${trimmed.message || 'Сообщение отсутствует'}
             </div>
           </div>
           <div style="margin-top: 20px; font-size: 12px; color: #666;">

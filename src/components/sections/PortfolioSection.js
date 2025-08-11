@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from 'react';
 import { Tilt } from 'react-tilt';
@@ -83,62 +83,62 @@ const PortfolioSection = () => {
           Примеры наших работ
           <span className="portfolio-title-underline" />
         </h2>
-        <p style={{textAlign: 'center', color: '#ccc', marginBottom: '2rem', fontSize: '1.2rem'}}>
+        <p style={ { textAlign: 'center', color: '#ccc', marginBottom: '2rem', fontSize: '1.2rem' } }>
           Вот сайты, которые мы сделали для клиентов. Каждый из них уже помогает зарабатывать и привлекать новых покупателей.
         </p>
         <div className="portfolio-filter">
-          {categories.map((category) => (
+          { categories.map((category) => (
             <button
-              key={category}
-              className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category)}
+              key={ category }
+              className={ `filter-btn ${selectedCategory === category ? 'active' : ''}` }
+              onClick={ () => setSelectedCategory(category) }
             >
-              {category === 'Все' ? 'Все проекты' :
+              { category === 'Все' ? 'Все проекты' :
                 category === 'Лендинги' ? 'Лендинги (одностраничные)' :
-                category === 'E-commerce' ? 'Интернет-магазины' :
-                category === 'Корпоративные сайты' ? 'Сайты для бизнеса' : category}
+                  category === 'E-commerce' ? 'Интернет-магазины' :
+                    category === 'Корпоративные сайты' ? 'Сайты для бизнеса' : category }
             </button>
-          ))}
+          )) }
         </div>
         <div className="portfolio-grid">
-          {filteredProjects.slice(0, visibleProjects).map((project) => (
-            <Tilt key={project.id} options={{ max: 8, scale: 1.03, speed: 400 }}>
+          { filteredProjects.slice(0, visibleProjects).map((project) => (
+            <Tilt key={ project.id } options={ { max: 8, scale: 1.03, speed: 400 } }>
               <div className="glass-card portfolio-card ultra" data-aos="fade-up">
                 <div className="portfolio-image-container">
                   <img
-                    src={project.image}
-                    alt={project.title}
+                    src={ project.image }
+                    alt={ project.title }
                     className="portfolio-image"
                   />
                   <div className="portfolio-image-overlay" />
                 </div>
                 <div className="portfolio-card-content">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  <h3>{ project.title }</h3>
+                  <p>{ project.description }</p>
                   <div className="portfolio-buttons">
-                    {project.caseStudy && (
-                      <a href={project.caseStudy} className="portfolio-link-btn">
+                    { project.caseStudy && (
+                      <a href={ project.caseStudy } className="portfolio-link-btn">
                         Читать кейс
                       </a>
-                    )}
-                    {project.link && (
-                      <a href={project.link} className="portfolio-link-btn" target="_blank" rel="noopener noreferrer">
+                    ) }
+                    { project.link && (
+                      <a href={ project.link } className="portfolio-link-btn" target="_blank" rel="noopener noreferrer">
                         Посмотреть сайт
                       </a>
-                    )}
+                    ) }
                   </div>
                 </div>
               </div>
             </Tilt>
-          ))}
+          )) }
         </div>
-        {visibleProjects < filteredProjects.length && (
+        { visibleProjects < filteredProjects.length && (
           <div className="portfolio-btn-container">
-            <button onClick={showAllProjects} className="portfolio-btn">
+            <button onClick={ showAllProjects } className="portfolio-btn">
               Показать еще
             </button>
           </div>
-        )}
+        ) }
       </div>
     </section>
   );

@@ -208,6 +208,10 @@
 .expertise {
   margin-bottom: 60px;
 }
+
+.expertise h3 {
+  font-size: 1.5rem;
+}
 .expertiseContent {
   max-width: 1200px;
   margin: 0 auto;
@@ -573,6 +577,14 @@
   }
   .hero, .workSteps, .problemBlock, .solutionBlock, .pricingCard, .faqItem, .expertiseCard {
     padding: 1.2rem 0.7rem;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .servicePage h2 {
+    font-size: 1.7rem;
   }
 }
 

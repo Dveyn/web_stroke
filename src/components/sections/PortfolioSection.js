@@ -13,16 +13,16 @@ const PortfolioSection = () => {
     {
       id: 6,
       image: '/img/portfolio/maxflow.png',
-      title: 'MaxFlow — рекламная сеть для Max',
-      description: 'Демо-платформа, которая помогает компаниям быстро запускать рекламу и получать новых клиентов в мессенджере Max. Всё просто: выбираете аудиторию — система сама подбирает лучшие каналы.',
+      title: 'MaxFlow — рекламная сеть для мессенджера Max',
+      description: 'Разработали прототип корпоративного сайта для привлечения рекламодателей и партнёров в рекламную сеть MaxFlow.',
       caseStudy: '/case-studies/maxflow',
       category: 'Корпоративные сайты'
     },
     {
       id: 5,
       image: '/img/portfolio/connectmax.png',
-      title: 'ConnectMax — каталог для Max',
-      description: 'Каталог чатов, ботов и каналов для мессенджера Max.',
+      title: 'ConnectMax — каталог',
+      description: 'Создали каталог чатов и ботов с поиском и фильтрацией. Более 10 000 посещений за первый месяц.',
       caseStudy: '/case-studies/connectmax',
       link: 'https://connectmax.ru/',
       category: 'Корпоративные сайты'
@@ -31,7 +31,7 @@ const PortfolioSection = () => {
       id: 1,
       image: '/img/portfolio/avatar.png',
       title: 'Сайт для бизнес-коуча',
-      description: 'Создание интернет-магазина для бизнес-коуча...',
+      description: 'Одностраничник с приёмом оплаты и записью на консультацию. Первый клиент — уже на следующий день после запуска.',
       caseStudy: '/case-studies/business-coach',
       link: 'https://avalik-avatar.ru/',
       category: 'Лендинги'
@@ -39,8 +39,8 @@ const PortfolioSection = () => {
     {
       id: 2,
       image: '/img/portfolio/matras.png',
-      title: 'Интернет-магазин матрасов',
-      description: 'Разработка интернет-магазина для частного производства...',
+      title: 'Магазин матрасов',
+      description: 'Полноценный интернет-магазин с оплатой и доставкой. Рост продаж на 27% через 2 недели после запуска.',
       caseStudy: '/case-studies/mattress-store',
       link: 'https://xn----gtbdqvfscg4gwb.xn--p1ai',
       category: 'E-commerce'
@@ -48,8 +48,8 @@ const PortfolioSection = () => {
     {
       id: 3,
       image: '/img/portfolio/merstone.png',
-      title: 'Сайт для игрового сервера',
-      description: 'Создание сайта для игрового сервера...',
+      title: 'Сайт игрового сервера',
+      description: 'Сайт с онлайн-статистикой и автоматическим пополнением баланса. 2 000+ новых регистраций за первый месяц.',
       caseStudy: '/case-studies/game-server',
       link: 'https://merstone.ru',
       category: 'Корпоративные сайты'
@@ -58,7 +58,7 @@ const PortfolioSection = () => {
       id: 4,
       image: '/img/portfolio/spisanie.png',
       title: 'Лендинг для адвоката',
-      description: 'Разработка лендинга для адвоката...',
+      description: 'Сайт с формой заявки и онлайн-консультацией. +12 новых клиентов в первую неделю.',
       caseStudy: '/case-studies/lawyer-landing',
       category: 'Лендинги'
     }

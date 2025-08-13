@@ -31,7 +31,7 @@ export async function POST(req) {
         pass: process.env.EMAIL_PASSWORD,
       },
       tls: {
-        rejectUnauthorized: true
+        rejectUnauthorized: false
       },
     });
 

@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Footer from "@@/components/layout/Footer";
 import CookieConsent from '../components/CookieConsent';
 import Trackers from "@@/utils/Trackers";
+import Script from 'next/script';
 
 export default function RootLayout({ children }) {
   return (
@@ -27,6 +28,25 @@ export default function RootLayout({ children }) {
         <meta name="twitter:title" content="ВебШтрих — разработка сайтов и веб-приложений" />
         <meta name="twitter:description" content="Создаём современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript. Более 100 успешных проектов." />
         <meta name="twitter:image" content="/img/logo.png" />
+        {/* Mail.ru Top counter */}
+        <Script id="mailru-counter" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            var _tmr = window._tmr || (window._tmr = []);
+            _tmr.push({id: "3689080", type: "pageView", start: (new Date()).getTime()});
+            (function (d, w, id) {
+              if (d.getElementById(id)) return;
+              var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+              ts.src = "https://top-fwz1.mail.ru/js/code.js";
+              var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+              if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+            })(document, window, "tmr-code");
+          `
+        }} />
+        <noscript>
+          <div>
+            <img src="https://top-fwz1.mail.ru/counter?id=3689080;js=na" style={{position: 'absolute', left: '-9999px'}} alt="Top.Mail.Ru" />
+          </div>
+        </noscript>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",

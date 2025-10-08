@@ -59,16 +59,15 @@ const Footer = () => {
         <div className="footer-section footer-map">
           <h3 className="title">Мы на карте</h3>
           <div className="map-wrapper">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d896.8941442107491!2d39.70145607624311!3d47.235706256749984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b87c7c5d4eff%3A0x4b7317d3e2a76d85!2z0JLQtdGA0L7QstCw0YAg0JrRg9C80LXRgNC-0LvQvtCy0LAg0JLQtdC70LjQutC70LDQvdC40Lkg0J7QsdC-0YDQvNCw0Y8!5e0!3m2!1sru!2sru!4v1730998100000!5m2!1sru!2sru"
-              width="100%"
-              height="180"
-              style={{ border: 0, borderRadius: '12px' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Карта ВебШтрих"
-            />
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=140530117890"
+                width="100%"
+                height="180"
+                frameBorder="0"
+                style={{ borderRadius: '1.2em', boxShadow: '0 2px 12px rgba(80,70,255,0.10)' }}
+                allowFullScreen
+                title="Карта"
+              />
           </div>
         </div>
       </div>

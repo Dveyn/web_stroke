@@ -90,7 +90,7 @@ const ContactSection = () => {
                 hasMessage: !!sanitizedData.message
               }
             });
-            
+
             // Отправляем событие
             window.ym(97829589, 'reachGoal', 'send_leed', {
               formData: {
@@ -100,7 +100,7 @@ const ContactSection = () => {
                 hasMessage: !!sanitizedData.message
               }
             });
-            
+
             console.log('✅ ContactSection: Yandex Metrika event sent successfully');
           } catch (error) {
             console.error('❌ ContactSection: Error sending Yandex Metrika event:', error);
@@ -222,7 +222,7 @@ const ContactSection = () => {
             <p>Работаем с проектами из Ростова-на-Дону и всей России: <a href="/services/seo">SEO-продвижение</a>, <a href="/services/marketing">реклама сайтов</a>, <a href="/services/web-apps">разработка веб-приложений</a>.</p>
             <div className="contact-map-container">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d896.8941442107491!2d39.70145607624311!3d47.235706256749984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b87c7c5d4eff%3A0x4b7317d3e2a76d85!2z0JLQtdGA0L7QstCw0YAg0JrRg9C80LXRgNC-0LvQvtCy0LAg0JLQtdC70LjQutC70LDQvdC40Lkg0J7QsdC-0YDQvNCw0Y8!5e0!3m2!1sru!2sru!4v1730998100000!5m2!1sru!2sru"
+                src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=140530117890"
                 width="100%"
                 height="320"
                 frameBorder="0"

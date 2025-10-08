@@ -89,6 +89,15 @@
   margin-bottom: 2rem;
 }
 
+.introParagraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--neutral-300);
+  margin: 0 auto 1.5rem;
+  max-width: 900px;
+  text-align: center;
+}
+
 .socialProof {
   display: flex;
   align-items: center;

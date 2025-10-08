@@ -16,13 +16,15 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="yandex-verification" content="cfdccd405acae9f8" />
         <meta name="google-site-verification" content="your-google-site-verification" />
-        <meta name="description" content="Создаём современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript. Более 100 успешных проектов." />
-        <meta name="keywords" content="веб-студия, разработка сайтов, веб-приложения, Next.js, React, TypeScript, Ростов-на-Дону, digital-агентство, IT-услуги, сайт для бизнеса, ВебШтрих" />
-        <meta property="og:title" content="ВебШтрих — разработка сайтов и веб-приложений" />
-        <meta property="og:description" content="Создаём современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript. Более 100 успешных проектов." />
+        <title>Разработка сайтов в Ростове-на-Дону | Веб-студия ВебШтрих</title>
+        <meta name="description" content="Закажите разработку сайтов под ключ в Ростове-на-Дону: корпоративные сайты, интернет-магазины, веб-приложения, SEO и реклама от студии ВебШтрих. Запуск за 7–10 дней." />
+        <meta name="keywords" content="разработка сайтов Ростов-на-Дону, веб студия Ростов, создание интернет-магазина Ростов, SEO продвижение Ростов-на-Дону, разработка веб-приложений Ростов, реклама сайтов Ростов, создание сайтов под ключ" />
+        <meta property="og:title" content="Разработка сайтов в Ростове-на-Дону | ВебШтрих" />
+        <meta property="og:description" content="Создаём адаптивные сайты, интернет-магазины и веб-приложения в Ростове-на-Дону. SEO, реклама и поддержка от студии ВебШтрих." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://webstroke.ru/" />
         <meta property="og:image" content="/img/logo.png" />
+        <link rel="canonical" href="https://webstroke.ru/" />
         <meta property="og:locale" content="ru_RU" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ВебШтрих — разработка сайтов и веб-приложений" />

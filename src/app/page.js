@@ -8,20 +8,30 @@ import HowWeWork from '@@/components/sections/howWeWork';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'ВебШтрих — разработка сайтов и веб-приложений | Веб-студия в Ростове-на-Дону',
-  description: 'Создаем современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript. Полный цикл: от дизайна до запуска и поддержки. Более 100 успешных проектов.',
-  keywords: 'веб-студия, разработка сайтов, веб-приложения, Next.js, React, TypeScript, Ростов-на-Дону, digital-агентство, IT-услуги, сайт для бизнеса, ВебШтрих',
+  title: 'Разработка сайтов в Ростове-на-Дону | Веб-студия ВебШтрих',
+  description: 'Разработка сайтов под ключ в Ростове-на-Дону от 120 000 ₽. Создаём корпоративные сайты, интернет-магазины, веб-приложения, SEO и рекламу. Запуск за 7–10 дней.',
+  keywords: [
+    'разработка сайтов Ростов-на-Дону',
+    'веб студия Ростов',
+    'создание интернет-магазина Ростов',
+    'SEO продвижение Ростов-на-Дону',
+    'разработка веб-приложений Ростов',
+    'реклама сайтов Ростов',
+  ].join(', '),
+  alternates: {
+    canonical: 'https://webstroke.ru/',
+  },
   openGraph: {
-    title: 'ВебШтрих — разработка сайтов и веб-приложений',
-    description: 'Создаем современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript. Более 100 успешных проектов.',
-    url: 'https://webstroke.ru',
+    title: 'Разработка сайтов в Ростове-на-Дону | Веб-студия ВебШтрих',
+    description: 'Закажите разработку сайтов под ключ, интернет-магазинов и веб-приложений в Ростове-на-Дону. SEO, реклама и поддержка от команды ВебШтрих.',
+    url: 'https://webstroke.ru/',
     siteName: 'ВебШтрих',
     images: [
       {
         url: '/img/logo.png',
         width: 1200,
         height: 630,
-        alt: 'ВебШтрих — разработка сайтов и веб-приложений',
+        alt: 'ВебШтрих — разработка сайтов в Ростове-на-Дону',
       },
     ],
     locale: 'ru_RU',
@@ -29,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ВебШтрих — разработка сайтов и веб-приложений',
-    description: 'Создаем современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript.',
+    title: 'Разработка сайтов в Ростове-на-Дону | ВебШтрих',
+    description: 'Создаём адаптивные сайты и веб-приложения под ключ, SEO и рекламу для бизнеса Ростова-на-Дону.',
     images: ['/img/logo.png'],
   },
   robots: {
@@ -43,12 +53,21 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+    yandexBot: {
+      index: true,
+      follow: true,
+    },
   },
   verification: {
     google: 'your-google-site-verification',
-    yandex: 'your-yandex-verification',
+    yandex: 'cfdccd405acae9f8',
   },
-}
+  other: {
+    'geo.position': '47.2357;39.7015',
+    'geo.region': 'RU-ROS',
+    'geo.placename': 'Ростов-на-Дону',
+  },
+};
 
 const HomePage = () => {
   return (

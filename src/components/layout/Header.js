@@ -23,10 +23,14 @@ const Header = () => {
             <li><a href="/#service">Услуги</a></li>
             <li><a href="/#portfolio">Портфолио</a></li>
             <li><a href="/#contact">Контакты</a></li>
+            <li><a href="/blog">Блог</a></li>
           </ul>
         </nav>
+        <a href="/blog" className={styles.secondaryCta}>
+          Читать блог
+        </a>
         <a href="/#contact" className={styles.ctaButton}>
-          Заказать сайт
+          Обсудить проект
         </a>
         <button
           className={`${styles.menuToggle} ${isMobileMenuOpen ? styles.active : ''}`}

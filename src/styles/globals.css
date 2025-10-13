@@ -535,7 +535,7 @@ p {
 
 @media (max-width: 768px) {
   #about .about-title {
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
   }
   #about .about-grid {
     grid-template-columns: 1fr;
@@ -549,7 +549,7 @@ p {
 
 @media (max-width: 480px) {
   #about .about-title {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
   #about .about-container {
     padding-left: var(--space-2);
@@ -2392,4 +2392,11 @@ textarea {
 
 .consent-label a:hover {
   color: var(--primary);
+}
+
+
+@media (max-width: 768px) {
+  #about p {
+    font-size: 0.8rem;
+  }
 }

@@ -23,12 +23,12 @@ const Header = () => {
             <li><a href="/#service">Услуги</a></li>
             <li><a href="/#portfolio">Портфолио</a></li>
             <li><a href="/#contact">Контакты</a></li>
-            <li><a href="/blog">Блог</a></li>
+            {/* <li><a href="/blog">Блог</a></li> */}
           </ul>
         </nav>
-        <a href="/blog" className={styles.secondaryCta}>
+        {/* <a href="/blog" className={styles.secondaryCta}>
           Читать блог
-        </a>
+        </a> */}
         <a href="/#contact" className={styles.ctaButton}>
           Обсудить проект
         </a>

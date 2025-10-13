@@ -83,19 +83,19 @@
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--neutral-400);
-  text-align: center;
+  text-align: justify;
   margin-bottom: 2rem;
 }
 
 .introParagraph {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--neutral-300);
   margin: 0 auto 1.5rem;
   max-width: 900px;
-  text-align: center;
+  text-align: justify;
 }
 
 .socialProof {
@@ -209,9 +209,11 @@
   0% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(0, -20px);
   }
+
   100% {
     transform: translate(0, 0);
   }
@@ -219,22 +221,40 @@
 
 @media (max-width: 768px) {
   .title {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
     font-size: 1.2rem;
   }
-  
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
   .benefits {
     grid-template-columns: 1fr;
   }
-  
+
   .techIcons {
     gap: 1rem;
   }
-  
+
   .techIcon {
     font-size: 2rem;
+  }
+
+  .benefit {
+    font-size: 0.8rem;
+  }
+
+  .introParagraph {
+    font-size: 0.8rem;
+  }
+
+  .primaryButton {
+    font-size: 1rem;
+  }
+  .intro {
+    padding: 5px
+  }
+  .heroCard {
+    padding: 10px
   }
 }

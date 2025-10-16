@@ -15,18 +15,6 @@ export default function Trackers() {
     } catch (e) {}
   }, []);
 
-  useEffect(() => {
-    if (!allowed) return;
-    // Inject Jivo widget once consent is granted
-    const existing = document.querySelector('script[src*="code.jivo.ru/widget/"]');
-    if (!existing) {
-      const s = document.createElement("script");
-      s.src = "//code.jivo.ru/widget/F4izd3z8dt";
-      s.async = true;
-      document.body.appendChild(s);
-    }
-  }, [allowed]);
-
   if (!allowed) return null;
   return <YandexMetrika />;
 }

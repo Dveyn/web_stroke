@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { FaUser, FaEnvelope, FaPhone, FaCommentDots } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaPhone, FaCommentDots, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import { PatternFormat } from 'react-number-format';
 import DOMPurify from 'dompurify';
 import aosInit from '@@/utils/aosInit';
@@ -215,6 +215,59 @@ const ContactSection = () => {
             <p>Email: <a href="mailto:info@webstroke.ru">info@webstroke.ru</a></p>
             <p>Телефон: <a href="tel:+78006009833">8-800-600-98-33</a></p>
             <p>Адрес: г. Ростов-на-Дону, ул. Вавилова, д. 49, офис 111</p>
+            
+            <h4 style={{ marginTop: '1.5em', marginBottom: '0.8em', fontSize: '1.1rem', color: '#fff' }}>
+              Напишите нам в мессенджерах
+            </h4>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <a 
+                href="https://t.me/webstrih" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="messenger-link"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.7rem 1.2rem',
+                  background: 'linear-gradient(135deg, #0088cc, #00a0e9)',
+                  color: '#fff',
+                  borderRadius: '1rem',
+                  textDecoration: 'none',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(0, 136, 204, 0.3)'
+                }}
+              >
+                <FaTelegram size={20} />
+                <span>Telegram</span>
+              </a>
+              <a 
+                href="https://wa.me/79034600881" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="messenger-link"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.7rem 1.2rem',
+                  background: 'linear-gradient(135deg, #25D366, #128C7E)',
+                  color: '#fff',
+                  borderRadius: '1rem',
+                  textDecoration: 'none',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(37, 211, 102, 0.3)'
+                }}
+              >
+                <FaWhatsapp size={20} />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+            
             <div className="contact-map-container">
               <iframe
                 src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=140530117890"

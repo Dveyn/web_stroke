@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaVk, FaTelegram } from "react-icons/fa";
+import { FaVk, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import styles from '@@/styles/footer.css';
 
 const Footer = () => {
@@ -29,16 +29,22 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="title">Социальные сети</h3>
           <div className="social-links">
-            <a href="https://vk.com/webstroke" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://vk.com/webstroke" target="_blank" rel="noopener noreferrer" className="social-link" title="ВКонтакте">
               <FaVk />
             </a>
-            <a href="https://t.me/web_stroke" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://t.me/web_stroke" target="_blank" rel="noopener noreferrer" className="social-link" title="Telegram канал">
               <FaTelegram />
             </a>
-            <a href="https://tenchat.ru/dveyn?utm_source=4bf75246-93b7-458d-b6e0-7d36c49f8274" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://t.me/webstrih" target="_blank" rel="noopener noreferrer" className="social-link" title="Telegram">
+              <FaTelegram />
+            </a>
+            <a href="https://wa.me/79034600881" target="_blank" rel="noopener noreferrer" className="social-link" title="WhatsApp">
+              <FaWhatsapp />
+            </a>
+            <a href="https://tenchat.ru/dveyn?utm_source=4bf75246-93b7-458d-b6e0-7d36c49f8274" target="_blank" rel="noopener noreferrer" className="social-link" title="TenChat">
               <img className="social-logo" src="/img/tenchat.png" alt="TenChat" />
             </a>
-            <a href="https://set.ki/invite/DbAdUj3" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://set.ki/invite/DbAdUj3" target="_blank" rel="noopener noreferrer" className="social-link" title="Сетка">
               <img className="social-logo" src="/img/setka.ico" alt="Сетка" />
             </a>
           </div>

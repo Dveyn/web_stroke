@@ -2,6 +2,7 @@ import Header from "@@/components/layout/Header";
 import "../styles/globals.css";
 import Footer from "@@/components/layout/Footer";
 import CookieConsent from '../components/CookieConsent';
+import MessengerWidget from '../components/MessengerWidget';
 import Trackers from "@@/utils/Trackers";
 import Script from 'next/script';
 
@@ -70,7 +71,9 @@ export default function RootLayout({ children }) {
           },
           "sameAs": [
             "https://vk.com/webstroke",
-            "https://t.me/webstroke"
+            "https://t.me/webstroke",
+            "https://t.me/webstrih",
+            "https://wa.me/79034600881"
           ]
         })}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -88,6 +91,7 @@ export default function RootLayout({ children }) {
         { children }
         <Footer />
         <CookieConsent />
+        <MessengerWidget />
         <Trackers />
       </body>
     </html>

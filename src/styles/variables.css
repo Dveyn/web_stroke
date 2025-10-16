@@ -3,8 +3,11 @@
   --primary: #7c3aed;
   --primary-dark: #6d28d9;
   --primary-light: #a78bfa;
+  --primary-lighter: #c4b5fd;
   --secondary: #10b981;
+  --secondary-light: #34d399;
   --accent: #f43f5e;
+  --accent-light: #fb7185;
   
   /* Нейтральные цвета */
   --neutral-50: #fafafa;
@@ -16,24 +19,44 @@
   --neutral-600: #525252;
   --neutral-700: #404040;
   --neutral-800: #262626;
+  --neutral-850: #1f1f1f;
   --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
+  
+  /* Нейроморфизм - фоны */
+  --neuro-bg-light: #e0e5ec;
+  --neuro-bg-dark: #1a1a1a;
+  --neuro-bg-base: #1e1e1e;
   
   /* Градиенты */
   --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
   --gradient-dark: linear-gradient(135deg, var(--neutral-800) 0%, var(--neutral-900) 100%);
   --gradient-glow: linear-gradient(135deg, rgba(124, 58, 237, 0.5) 0%, rgba(167, 139, 250, 0.5) 100%);
+  --gradient-neuro: linear-gradient(145deg, #1f1f1f, #161616);
+  --gradient-neuro-reverse: linear-gradient(145deg, #161616, #1f1f1f);
   
-  /* Тени */
+  /* Нейроморфные тени */
+  --neuro-shadow-light: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.03);
+  --neuro-shadow-dark: 6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.02);
+  --neuro-shadow-inset: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(255, 255, 255, 0.02);
+  --neuro-shadow-hover: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.04);
+  --neuro-shadow-pressed: inset 6px 6px 12px rgba(0, 0, 0, 0.5), inset -2px -2px 8px rgba(255, 255, 255, 0.02);
+  
+  /* Обычные тени */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.3);
+  --shadow-glow-strong: 0 0 30px rgba(124, 58, 237, 0.5);
   
   /* Эффекты размытия */
   --blur-sm: blur(4px);
   --blur-md: blur(8px);
   --blur-lg: blur(16px);
+  --blur-xl: blur(24px);
   
   /* Скругления */
   --radius-sm: 0.375rem;
@@ -41,6 +64,9 @@
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+  --radius-full: 9999px;
   
   /* Отступы */
   --space-1: 0.25rem;
@@ -50,8 +76,11 @@
   --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
+  --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
   
   /* Шрифты */
   --font-sans: 'Inter var', system-ui, -apple-system, sans-serif;
@@ -61,10 +90,21 @@
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   
   /* Контейнер */
   --container-max-width: 1280px;
   --container-padding: var(--space-4);
+  
+  /* Z-index система */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
 }
 
 /* Темная тема */

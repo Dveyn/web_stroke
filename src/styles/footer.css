@@ -1,10 +1,11 @@
 .footer {
-  background: rgba(23, 23, 23, 0.8);
-  backdrop-filter: var(--blur-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: var(--space-16) 0;
+  background: var(--gradient-neuro);
+  backdrop-filter: var(--blur-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: var(--space-20) 0 var(--space-8) 0;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .footer::before {
@@ -13,9 +14,15 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: var(--gradient-primary);
-  opacity: 0.5;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    var(--primary) 25%,
+    var(--primary-light) 50%,
+    var(--primary) 75%,
+    transparent 100%
+  );
+  opacity: 0.6;
 }
 
 .footer-content {
@@ -36,19 +43,22 @@
 }
 
 .logo img {
-  height: 40px;
+  height: 42px;
   width: auto;
-  transition: var(--transition-normal);
+  transition: all var(--transition-normal);
+  filter: drop-shadow(0 3px 10px rgba(124, 58, 237, 0.2));
 }
 
 .logo:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: drop-shadow(0 5px 16px rgba(124, 58, 237, 0.4));
 }
 
 .description {
   color: var(--neutral-400);
   line-height: 1.6;
   margin-bottom: var(--space-6);
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .footer-section {
@@ -59,11 +69,11 @@
 
 .title {
   color: var(--neutral-50);
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: var(--space-2);
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  margin-bottom: var(--space-4);
   position: relative;
-  padding-bottom: var(--space-2);
+  padding-bottom: var(--space-3);
 }
 
 .title::after {
@@ -71,9 +81,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--gradient-primary);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
 }
 
 .links {
@@ -90,6 +102,8 @@
   transition: var(--transition-normal);
   padding-left: var(--space-3);
   position: relative;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  line-height: 1.6;
 }
 
 .links li::before {
@@ -122,24 +136,49 @@
 }
 
 .social-link {
-  color: var(--neutral-400);
+  color: var(--neutral-300);
   text-decoration: none;
-  transition: var(--transition-normal);
-  width: 40px;
-  height: 40px;
+  transition: all var(--transition-normal);
+  width: clamp(44px, 10vw, 48px);
+  height: clamp(44px, 10vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  background: var(--gradient-neuro);
+  box-shadow: var(--neuro-shadow-dark);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  position: relative;
+  overflow: hidden;
+  /* Минимальный размер для touch */
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: inherit;
 }
 
 .social-link:hover {
-  color: var(--neutral-50);
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
+  color: #fff;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: var(--neuro-shadow-hover), 0 4px 16px rgba(124, 58, 237, 0.3);
+}
+
+.social-link:hover::before {
+  opacity: 0.8;
+}
+
+.social-link svg,
+.social-link img {
+  position: relative;
+  z-index: 1;
 }
 
 .footer-bottom {
@@ -170,22 +209,30 @@
 .legal-link {
   color: var(--neutral-400);
   text-decoration: none;
-  font-size: 0.875rem;
-  transition: var(--transition-normal);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  font-weight: 500;
+  transition: all var(--transition-normal);
   position: relative;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  /* Touch-friendly */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .legal-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--gradient-primary);
+  bottom: 4px;
+  left: var(--space-3);
+  width: calc(100% - var(--space-6));
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
   transform: scaleX(0);
   transform-origin: right;
-  transition: var(--transition-normal);
+  transition: transform var(--transition-normal);
+  border-radius: var(--radius-full);
 }
 
 .legal-link:hover {
@@ -213,12 +260,44 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: var(--space-8) 0;
+    padding: var(--space-12) 0 var(--space-6) 0;
   }
 
   .footer-content {
     grid-template-columns: 1fr;
-    gap: var(--space-8);
+    gap: var(--space-6);
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .links li {
+    padding-left: 0;
+  }
+
+  .links li::before {
+    display: none;
+  }
+
+  .social-links {
+    justify-content: center;
+    gap: var(--space-3);
+  }
+
+  .social-link {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
   }
 
   .footer-bottom .container {
@@ -227,8 +306,53 @@
     text-align: center;
   }
 
+  .copyright {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
   .legal {
     flex-direction: column;
     gap: var(--space-2);
+    align-items: center;
+  }
+
+  .legal-link {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* Улучшения для малых экранов */
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--space-8) 0 var(--space-4) 0;
+  }
+
+  .footer-content {
+    gap: var(--space-4);
+  }
+
+  .logo img {
+    height: 36px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: var(--space-2);
+  }
+
+  .social-link {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+
+  .legal-link {
+    font-size: 0.8rem;
+    padding: var(--space-2);
   }
 }

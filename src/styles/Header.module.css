@@ -108,10 +108,10 @@
   color: var(--neutral-50);
 }
 
-.navList li a:hover::before,
+/* .navList li a:hover::before,
 .navList li a:focus::before {
   opacity: 1;
-}
+} */
 
 .navList li a:hover::after,
 .navList li a:focus::after {

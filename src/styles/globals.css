@@ -2412,10 +2412,6 @@ textarea {
   transform: translateY(-2px);
 }
 
-.filter-btn.active::before,
-.filter-btn:hover::before {
-  opacity: 1;
-}
 
 .filter-btn span {
   position: relative;

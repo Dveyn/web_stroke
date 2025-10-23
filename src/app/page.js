@@ -1,9 +1,8 @@
-import Header from '../components/layout/Header';
 import AboutSection from '../components/sections/AboutSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import PortfolioSection from '../components/sections/PortfolioSection';
 import IntroSection from '@@/components/sections/IntroSection';
-import ContactSection from '@@/components/sections/ContsctSection';
+import ContactSection from '@@/components/sections/ContactSection';
 import HowWeWork from '@@/components/sections/howWeWork';
 import Script from 'next/script';
 

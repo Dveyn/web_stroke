@@ -128,7 +128,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact">
+    <section id="contact" data-testid="contact-section">
       <div className="contact-container">
         <h2 className="contact-title" data-aos="fade-up">
           Контакты

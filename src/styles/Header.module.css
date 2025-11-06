@@ -38,12 +38,12 @@
   height: clamp(32px, 5vw, 50px);
   width: auto;
   transition: all var(--transition-normal);
-  filter: drop-shadow(0 3px 10px rgba(124, 58, 237, 0.2));
+  filter: drop-shadow(0 3px 10px rgba(37, 99, 235, 0.2));
 }
 
 .logo:hover img {
   transform: scale(1.08) rotate(-3deg);
-  filter: drop-shadow(0 5px 20px rgba(124, 58, 237, 0.4));
+  filter: drop-shadow(0 5px 20px rgba(37, 99, 235, 0.4));
 }
 
 .nav {

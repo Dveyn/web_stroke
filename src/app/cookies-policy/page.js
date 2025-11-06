@@ -2,7 +2,7 @@ export default function CookiesPolicy() {
   return (
     <main style={{maxWidth:700,margin:'0 auto',padding:'48px 16px',fontFamily:'Inter,sans-serif'}}>
       <h1 style={{fontSize:'2rem',fontWeight:800,marginBottom:'1.5em'}}>Политика использования cookies</h1>
-      <section style={{color:'#ccc',fontSize:'1.08rem',lineHeight:1.7}}>
+      <section style={{color:'#4b5563',fontSize:'1.08rem',lineHeight:1.7}}>
         <p><b>1. Термины и определения</b></p>
         <ul>
           <li><b>Cookies</b> — небольшие текстовые файлы, сохраняемые на устройстве Пользователя при посещении Сайта.</li>
@@ -54,8 +54,8 @@ export default function CookiesPolicy() {
         </ul>
         <p><b>11. Контактные данные</b></p>
         <p>По вопросам, связанным с использованием cookies, Пользователь может обратиться по адресу электронной почты: admin@webstroke.ru.</p>
-        <p style={{marginTop:'2em',fontSize:'0.98em',color:'#888'}}>Последнее обновление: 2025</p>
-        <p style={{marginTop:'1em',fontSize:'0.95em',color:'#888'}}>Политика составлена с учётом требований ФЗ «О персональных данных» №152-ФЗ, ФЗ «Об информации, информационных технологиях и о защите информации» №149-ФЗ, ГК РФ и иных нормативных актов.</p>
+        <p style={{marginTop:'2em',fontSize:'0.98em',color:'#6b7280'}}>Последнее обновление: 2025</p>
+        <p style={{marginTop:'1em',fontSize:'0.95em',color:'#6b7280'}}>Политика составлена с учётом требований ФЗ «О персональных данных» №152-ФЗ, ФЗ «Об информации, информационных технологиях и о защите информации» №149-ФЗ, ГК РФ и иных нормативных актов.</p>
       </section>
     </main>
   );

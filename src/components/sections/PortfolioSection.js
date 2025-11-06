@@ -83,7 +83,7 @@ const PortfolioSection = () => {
           Примеры наших работ
           <span className="portfolio-title-underline" />
         </h2>
-        <p style={ { textAlign: 'center', color: '#ccc', marginBottom: '2rem', fontSize: '1.2rem' } }>
+        <p className="portfolio-subtitle">
           Вот сайты, которые мы сделали для клиентов. Каждый из них уже помогает зарабатывать и привлекать новых покупателей.
         </p>
         <div className="portfolio-filter">

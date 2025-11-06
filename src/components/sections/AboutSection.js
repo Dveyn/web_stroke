@@ -19,10 +19,10 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="about-title"
             style={{
-              color: '#fff',
+              color: '#111827',
               fontWeight: 800,
               fontSize: '2.5rem',
-              textShadow: '0 2px 8px rgba(0,0,0,0.18)',
+              textShadow: 'none',
               letterSpacing: '-0.01em',
               textAlign: 'center',
               marginBottom: 'var(--space-6)',

@@ -216,7 +216,7 @@ const ContactSection = () => {
             <p>Телефон: <a href="tel:+78006009833">8-800-600-98-33</a></p>
             <p>Адрес: г. Ростов-на-Дону, ул. Вавилова, д. 49, офис 111</p>
             
-            <h4 style={{ marginTop: '1.5em', marginBottom: '0.8em', fontSize: '1.1rem', color: '#fff' }}>
+            <h4 style={{ marginTop: '1.5em', marginBottom: '0.8em', fontSize: '1.1rem', color: '#111827' }}>
               Напишите нам в мессенджерах
             </h4>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

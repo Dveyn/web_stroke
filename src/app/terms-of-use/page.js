@@ -2,7 +2,7 @@ export default function TermsOfUse() {
   return (
     <main style={{maxWidth:700,margin:'0 auto',padding:'48px 16px',fontFamily:'Inter,sans-serif'}}>
       <h1 style={{fontSize:'2rem',fontWeight:800,marginBottom:'1.5em'}}>Пользовательское соглашение</h1>
-      <section style={{color:'#ccc',fontSize:'1.08rem',lineHeight:1.7}}>
+      <section style={{color:'#4b5563',fontSize:'1.08rem',lineHeight:1.7}}>
         <p><b>1. Термины и определения</b></p>
         <ul>
           <li><b>Сайт</b> — интернет-ресурс digital-агентства, расположенный по адресу: webstroke.ru.</li>
@@ -53,8 +53,8 @@ export default function TermsOfUse() {
         </ul>
         <p><b>12. Контактные данные</b></p>
         <p>По вопросам, связанным с использованием Сайта, Пользователь может обратиться по адресу электронной почты: admin@webstroke.ru.</p>
-        <p style={{marginTop:'2em',fontSize:'0.98em',color:'#888'}}>Последнее обновление: 2025</p>
-        <p style={{marginTop:'1em',fontSize:'0.95em',color:'#888'}}>Соглашение составлено с учётом требований ГК РФ, ФЗ «О персональных данных» №152-ФЗ, ФЗ «Об информации, информационных технологиях и о защите информации» №149-ФЗ и иных нормативных актов.</p>
+        <p style={{marginTop:'2em',fontSize:'0.98em',color:'#6b7280'}}>Последнее обновление: 2025</p>
+        <p style={{marginTop:'1em',fontSize:'0.95em',color:'#6b7280'}}>Соглашение составлено с учётом требований ГК РФ, ФЗ «О персональных данных» №152-ФЗ, ФЗ «Об информации, информационных технологиях и о защите информации» №149-ФЗ и иных нормативных актов.</p>
       </section>
     </main>
   );

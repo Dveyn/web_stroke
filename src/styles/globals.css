@@ -216,7 +216,7 @@ a {
 .input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: var(--neuro-shadow-inset), 0 0 0 3px rgba(124, 58, 237, 0.15);
+  box-shadow: var(--neuro-shadow-inset), 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .input::placeholder {
@@ -503,7 +503,7 @@ p {
   transform: translateX(-50%);
   width: 60px;
   height: 2.5px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary));
+  background: linear-gradient(90deg, #2563eb, #9333ea, #2563eb);
   border-radius: var(--radius-full);
   opacity: 1;
 }
@@ -584,11 +584,14 @@ p {
 
 #about .cta {
   margin: var(--space-8) 0 var(--space-2) 0;
-  color: var(--primary);
+  color: #2563eb;
   font-weight: 500;
   font-size: 1.05rem;
   text-align: center;
-  opacity: 0.9;
+}
+
+#about .cta strong {
+  color: #111827;
 }
 
 #about .cta-container {
@@ -930,7 +933,7 @@ p {
 }
 
 .input-icon {
-  color: #888;
+  color: #6b7280;
   font-size: 1.2em;
 }
 
@@ -2259,10 +2262,12 @@ textarea {
   justify-content: center;
   margin-bottom: 1rem;
   transition: all 0.3s;
+  flex-shrink: 0;
 }
 
 .service-icon svg {
-  font-size: 1.75rem;
+  width: 28px;
+  height: 28px;
   color: white;
 }
 
@@ -2275,6 +2280,7 @@ textarea {
   font-weight: 600;
   color: #111827;
   margin-bottom: 0.75rem;
+  line-height: 1.5;
 }
 
 .service-card-title a {
@@ -2299,13 +2305,15 @@ textarea {
   margin-bottom: 1rem;
   list-style: none;
   padding: 0;
-  color: #4b5563;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .service-benefits li {
-  margin-bottom: 0.5rem;
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .service-price {
@@ -2313,6 +2321,7 @@ textarea {
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .service-link {
@@ -2321,10 +2330,7 @@ textarea {
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid #e5e7eb;
-  width: 100%;
+  display: block;
 }
 
 .service-link:hover {
@@ -2573,8 +2579,19 @@ textarea {
   width: 80px;
   height: 4px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary));
+  background: linear-gradient(90deg, #2563eb, #9333ea);
   opacity: 0.8;
+}
+
+.portfolio-subtitle {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portfolio-filter {
@@ -2619,10 +2636,7 @@ textarea {
   border-color: transparent;
 }
 
-.filter-btn.active::before,
-.filter-btn:hover::before {
-  opacity: 1;
-}
+
 
 
 .filter-btn span {

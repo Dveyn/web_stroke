@@ -8,12 +8,12 @@
   "description": "Создаём современные сайты и веб-приложения для бизнеса. Разработка на Next.js, React, TypeScript. Более 100 успешных проектов.",
   "icons": [
     {
-      "src": "/img/favicon.png",
+      "src": "/img/favicon.jpg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/img/favicon.png",
+      "src": "/img/favicon.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }

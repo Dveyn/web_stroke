@@ -1,11 +1,11 @@
 .footer {
-  background: var(--gradient-neuro);
-  backdrop-filter: var(--blur-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: #ffffff;
+  backdrop-filter: none;
+  border-top: 1px solid #e5e7eb;
   padding: var(--space-20) 0 var(--space-8) 0;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .footer::before {
@@ -55,7 +55,7 @@
 }
 
 .description {
-  color: var(--neutral-400);
+  color: #4b5563;
   line-height: 1.6;
   margin-bottom: var(--space-6);
   font-size: clamp(0.9rem, 2vw, 1rem);
@@ -68,7 +68,7 @@
 }
 
 .title {
-  color: var(--neutral-50);
+  color: #111827;
   font-weight: 700;
   font-size: clamp(1rem, 2.5vw, 1.15rem);
   margin-bottom: var(--space-4);
@@ -98,7 +98,7 @@
 }
 
 .links li {
-  color: var(--neutral-400);
+  color: #4b5563;
   transition: var(--transition-normal);
   padding-left: var(--space-3);
   position: relative;
@@ -115,13 +115,13 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--primary);
+  background: #2563eb;
   opacity: 0;
   transition: var(--transition-normal);
 }
 
 .links li:hover {
-  color: var(--neutral-50);
+  color: #111827;
   padding-left: var(--space-4);
 }
 
@@ -136,7 +136,7 @@
 }
 
 .social-link {
-  color: var(--neutral-300);
+  color: #4b5563;
   text-decoration: none;
   transition: all var(--transition-normal);
   width: clamp(44px, 10vw, 48px);
@@ -145,12 +145,11 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-lg);
-  background: var(--gradient-neuro);
-  box-shadow: var(--neuro-shadow-dark);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 2px solid #e5e7eb;
   position: relative;
   overflow: hidden;
-  /* Минимальный размер для touch */
   min-width: 44px;
   min-height: 44px;
 }
@@ -166,9 +165,10 @@
 }
 
 .social-link:hover {
-  color: #fff;
+  color: #ffffff;
   transform: translateY(-4px) scale(1.08);
-  box-shadow: var(--neuro-shadow-hover), 0 4px 16px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+  border-color: transparent;
 }
 
 .social-link:hover::before {
@@ -184,7 +184,7 @@
 .footer-bottom {
   margin-top: var(--space-12);
   padding-top: var(--space-8);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #e5e7eb;
 }
 
 .footer-bottom .container {
@@ -197,7 +197,7 @@
 }
 
 .copyright {
-  color: var(--neutral-400);
+  color: #4b5563;
   font-size: 0.875rem;
 }
 
@@ -207,7 +207,7 @@
 }
 
 .legal-link {
-  color: var(--neutral-400);
+  color: #4b5563;
   text-decoration: none;
   font-size: clamp(0.8rem, 2vw, 0.9rem);
   font-weight: 500;
@@ -236,7 +236,7 @@
 }
 
 .legal-link:hover {
-  color: var(--neutral-50);
+  color: #111827;
 }
 
 .legal-link:hover::after {

@@ -1,93 +1,82 @@
 .caseStudyPage {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 40px;
-  color: #fff;
+  color: #111827;
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #ffffff;
 }
 
 .caseStudyHeader {
-  background: rgba(30, 30, 40, 0.82);
-  backdrop-filter: blur(18px);
-  border-radius: 2.2em;
-  padding: 48px 40px;
-  border: 1.5px solid rgba(120, 120, 255, 0.13);
-  box-shadow: 0 8px 40px 0 rgba(80, 70, 255, 0.10), 0 1.5px 0 rgba(255, 255, 255, 0.04) inset;
+  background: linear-gradient(to bottom right, #f9fafb, rgba(239, 246, 255, 0.3), rgba(250, 245, 255, 0.3));
+  backdrop-filter: none;
+  border-radius: 1.5rem;
+  padding: 5rem 3rem;
+  border: none;
+  box-shadow: none;
   margin-bottom: 60px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  text-align: center;
 }
 
 .caseStudyHeader::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  z-index: 0;
-  border-radius: inherit;
-  padding: 0;
-  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-primary) 100%);
-  opacity: 0.7;
-  filter: blur(0.5px);
-  transition: opacity 0.3s;
-  animation: borderGradientMove 4s linear infinite;
+  display: none;
 }
 
 .title {
-  font-size: 3.2rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.1;
-
   margin-bottom: 0.5em;
   position: relative;
   z-index: 1;
+  color: #111827;
 }
 
 .title::after {
-  content: '';
-  display: block;
-  margin: 0.7em auto 0;
-  width: 80px;
-  height: 4px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-primary));
-  opacity: 0.8;
+  display: none;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.8;
-  color: #f3f3f3;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  color: #4b5563;
+  text-shadow: none;
   position: relative;
   z-index: 1;
+  max-width: 42rem;
+  margin: 0 auto;
 }
 
 .caseStudyContent {
-  background: rgba(30, 30, 40, 0.82);
-  backdrop-filter: blur(15px);
-  border-radius: 2.2em;
-  padding: 48px 40px;
-  border: 1.5px solid rgba(120, 120, 255, 0.13);
-  box-shadow: 0 8px 40px 0 rgba(80, 70, 255, 0.10), 0 1.5px 0 rgba(255, 255, 255, 0.04) inset;
+  background: #ffffff;
+  backdrop-filter: none;
+  border-radius: 1rem;
+  padding: 3rem 2.5rem;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 60px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .caseIconContainer {
   width: 100%;
-  height: 120px;
-  background: rgba(40, 40, 60, 0.85);
-  border-radius: 0.7em;
-  margin-bottom: 0.7rem;
+  height: 500px;
+  background: #f9fafb;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
-  border: 1.5px solid rgba(120, 120, 255, 0.10);
+  border: 2px solid #e5e7eb;
   text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .caseImage {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -98,28 +87,26 @@
 }
 
 .caseDetails {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   line-height: 1.8;
-  color: #f3f3f3;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  color: #4b5563;
+  text-shadow: none;
 }
 
 .process,
 .results,
 .priceBlock,
 .timelineBlock {
-  background: rgba(30, 30, 40, 0.82);
-  backdrop-filter: blur(15px);
-  border-radius: 1.1em;
-  padding: 1.2rem 1rem;
-  border: 1.5px solid rgba(120, 120, 255, 0.13);
-  box-shadow:
-    0 2px 12px 0 rgba(120, 120, 255, 0.07),
-    0 1.5px 0 rgba(255, 255, 255, 0.06) inset;
-  margin-bottom: 24px;
+  background: #ffffff;
+  backdrop-filter: none;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
   position: relative;
-  overflow: hidden;
-  max-width: 700px;
+  overflow: visible;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -128,11 +115,11 @@
 .resultsTitle,
 .priceBlock h2,
 .timelineBlock h2 {
-  font-size: 1.3rem;
+  font-size: 1.875rem;
   font-weight: 800;
-  margin-bottom: 0.7em;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  margin-bottom: 1em;
+  color: #111827;
+  text-shadow: none;
   position: relative;
   display: inline-block;
 }
@@ -147,9 +134,8 @@
   width: 60px;
   height: 4px;
   border-radius: 2px;
-  background: radial-gradient(circle, var(--color-primary-light) 60%, transparent 100%);
-  box-shadow: 0 0 16px 4px var(--color-primary-light);
-  opacity: 0.7;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  opacity: 0.8;
 }
 
 .processList {
@@ -161,95 +147,112 @@
   margin: 15px 0;
   padding-left: 2em;
   position: relative;
-  color: #f3f3f3;
-  font-size: 1.1rem;
+  color: #4b5563;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
 .processItem::before {
-  content: "•";
-  color: var(--color-primary);
+  content: "✓";
+  color: #2563eb;
   position: absolute;
   left: 0;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .results p,
 .priceBlock p,
 .timelineBlock p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #f3f3f3;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #4b5563;
+  text-shadow: none;
 }
 
 .otherCaseStudies {
   margin-top: 80px;
+  padding-top: 4rem;
+  border-top: 2px solid #e5e7eb;
 }
 
 .otherCaseStudies h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 1em;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  margin-bottom: 2rem;
+  color: #111827;
+  text-shadow: none;
   position: relative;
+  text-align: center;
 }
 
 .otherCaseStudies h2::after {
   content: '';
   display: block;
-  margin: 0.7em 0 0;
+  margin: 0.7em auto 0;
   width: 60px;
   height: 4px;
   border-radius: 2px;
-  background: radial-gradient(circle, var(--color-primary-light) 60%, transparent 100%);
-  box-shadow: 0 0 16px 4px var(--color-primary-light);
-  opacity: 0.7;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  opacity: 0.8;
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .caseCard {
-  background: rgba(30, 30, 40, 0.82);
-  backdrop-filter: blur(15px);
-  border-radius: 0.8em;
-  border: 1.5px solid rgba(120, 120, 255, 0.13);
-  padding: 1rem 0.7rem;
+  background: #ffffff;
+  backdrop-filter: none;
+  border-radius: 1rem;
+  border: 2px solid #e5e7eb;
+  padding: 1.5rem;
   transition: all 0.3s;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   height: 100%;
   position: relative;
-  overflow: hidden;
-  color: #fff;
+  overflow: visible;
+  color: #111827;
   text-decoration: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .caseCard:hover {
-  transform: translateY(-5px) scale(1.025);
-  box-shadow: 0 10px 30px rgba(80, 70, 255, 0.13);
-  border-color: var(--color-primary-light);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #bfdbfe;
 }
 
 .caseCard h3 {
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  color: #fff;
+  color: #111827;
   margin: 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  text-shadow: none;
 }
 
 .caseCard p {
-  font-size: 0.97rem;
-  color: var(--color-primary);
+  font-size: 1rem;
+  color: #2563eb;
   margin: 0;
+  font-weight: 600;
+}
+
+.caseCard .caseIconContainer {
+  width: 100%;
+  height: 200px;
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #e5e7eb;
+  text-align: center;
 }
 
 @keyframes borderGradientMove {
@@ -300,9 +303,9 @@
     padding: 0.7rem 0.4rem;
   }
 
-  .caseIconContainer {
-    height: 100px;
-    border-radius: 0.5em;
+  .caseCard .caseIconContainer {
+    height: 150px;
+    border-radius: 0.5rem;
   }
 
   .caseCard h3 {
@@ -346,7 +349,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 24px 0 16px 0;
+  margin: 3rem 0 2rem 0;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  border-radius: 1rem;
+  color: white;
 }
 
 .ctaWrapper .BtnCta,
@@ -355,8 +362,18 @@
   min-width: 220px;
   font-size: 1rem;
   padding: 0.9em 2em;
-  border-radius: 1em;
-  box-shadow: 0 2px 12px 0 rgba(120, 120, 255, 0.07), 0 1.5px 0 rgba(255, 255, 255, 0.06) inset;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.ctaWrapper .BtnCta:hover,
+.ctaWrapper button:hover,
+.ctaWrapper a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 768px) {

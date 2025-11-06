@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { 
   FaBuilding, 
   FaShoppingCart, 
@@ -20,7 +21,7 @@ import { BtnCta } from '../common/btnCta';
 
 const services = [
   {
-    icon: <FaBuilding className="service-icon" />,
+    icon: <FaBuilding />,
     title: "Корпоративный сайт",
     link: "/services/corporate-sites",
     description: "Построим современный сайт, который продаёт ваши услуги 24/7. Подберём решение под ваш бюджет и задачи.",
@@ -28,7 +29,7 @@ const services = [
     price: "от 120 000 ₽"
   },
   {
-    icon: <FaShoppingCart className="service-icon" />,
+    icon: <FaShoppingCart />,
     title: "Интернет-магазин",
     link: "/services/ecommerce",
     description: "Запустим магазин, который начнёт продавать уже в первый день. С оплатой и доставкой прямо на сайте.",
@@ -36,7 +37,7 @@ const services = [
     price: "от 180 000 ₽"
   },
   {
-    icon: <FaLaptopCode className="service-icon" />,
+    icon: <FaLaptopCode />,
     title: "Веб-сервис под ключ",
     link: "/services/web-apps",
     description: "Создадим уникальный сервис для автоматизации работы и роста вашего бизнеса.",
@@ -44,7 +45,7 @@ const services = [
     price: "от 200 000 ₽"
   },
   {
-    icon: <FaSearch className="service-icon" />,
+    icon: <FaSearch />,
     title: "SEO-продвижение",
     link: "/services/seo",
     description: "Поднимем ваш сайт в поиске и приведём больше целевых клиентов.",
@@ -52,7 +53,7 @@ const services = [
     price: "от 60 000 ₽"
   },
   {
-    icon: <FaBullhorn className="service-icon" />,
+    icon: <FaBullhorn />,
     title: "Реклама и маркетинг",
     link: "/services/marketing",
     description: "Запустим рекламу, которая приведёт клиентов уже завтра. Работаем с Яндекс, Telegramm, VK.",
@@ -76,21 +77,57 @@ const ServicesSection = () => {
   useEffect(() => {
     aosInit();
   }, []);
+  const serviceColors = [
+    'from-blue-500 to-cyan-500',
+    'from-purple-500 to-pink-500',
+    'from-indigo-500 to-blue-500',
+    'from-yellow-500 to-orange-500',
+    'from-green-500 to-emerald-500',
+  ];
+
   return (
     <section id="service">
       <div className="service-container">
-        <h2 className="service-title" data-aos="fade-up">Наши услуги:</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="service-badge">Наши услуги</div>
+          <h2 className="service-title" data-aos="fade-up">Полный цикл разработки</h2>
+          <p className="service-subtitle">
+            От идеи до запуска и поддержки — создаем цифровые продукты, которые работают на ваш бизнес
+          </p>
+        </motion.div>
         <div className="service-grid">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="glass-card service-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="service-card"
               data-aos="fade-up"
               data-aos-delay={index * 100}
               tabIndex={0}
               onClick={() => window.location.href = service.link}
             >
-              <div className="service-icon">{service.icon}</div>
+              <div 
+                className="service-icon"
+                style={{
+                  background: `linear-gradient(to bottom right, ${
+                    serviceColors[index]?.includes('blue-500') ? '#3b82f6, #06b6d4' :
+                    serviceColors[index]?.includes('purple-500') ? '#a855f7, #ec4899' :
+                    serviceColors[index]?.includes('indigo-500') ? '#6366f1, #3b82f6' :
+                    serviceColors[index]?.includes('yellow-500') ? '#eab308, #f97316' :
+                    '#22c55e, #10b981'
+                  })`
+                }}
+              >
+                {service.icon}
+              </div>
               <h3 className="service-card-title">
                 <a href={service.link}>{service.title}</a>
               </h3>
@@ -98,9 +135,11 @@ const ServicesSection = () => {
               <ul className="service-benefits">
                 {service.benefits.map((benefit, i) => <li key={i}>{benefit}</li>)}
               </ul>
-              <p className="service-price">{service.price}</p>
-              <a href={service.link} className="cta-button">Подробнее об услуге</a>
-            </div>
+              <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #e5e7eb', width: '100%' }}>
+                <p className="service-price">{service.price}</p>
+                <a href={service.link} className="service-link">Подробнее об услуге →</a>
+              </div>
+            </motion.div>
           ))}
         </div>
 

@@ -308,6 +308,7 @@
     min-height: auto;
     padding-top: 80px;
     padding-bottom: 3rem;
+    background: #ffffff;
   }
 
   .heroCard {
@@ -382,6 +383,7 @@
   .intro {
     padding: 1rem 0.75rem;
     padding-top: 70px;
+    background: #ffffff;
   }
 
   .heroCard {
@@ -428,6 +430,7 @@
   .intro {
     min-height: auto;
     padding: 2rem 1rem;
+    background: #ffffff;
   }
 
   .heroCard {
